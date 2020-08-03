@@ -16,5 +16,5 @@ Cpp programming language lectures for computer science students.
 ### Lecture 08 - [Functions]()
 ### Lecture 09 - [Strings]()
 ### Lecture 10 - [Structures]()
-### Lecture 11 - [Enumerations]()
-### Lecture 12 - [Unions]()
+### Lecture 11 - [Enumerations & Unions]()
+### Lecture 12 - [Numbers]()
