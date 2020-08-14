@@ -1,7 +1,7 @@
 # Cpp-Programming-Language
 Cpp programming language lectures for computer science students.
 
-## Part 1: C++ Basics and Arrays
+## Part 1: C++ Basics and Arrays `[20H]`
 
 ### Lecture 01 - [Overview]()
 ### Lecture 02 - [Variable Types]()
@@ -10,7 +10,7 @@ Cpp programming language lectures for computer science students.
 ### Lecture 05 - [Loops]()
 ### Lecture 06 - [Arrays]()
 
-## Part 2: C++ Pointers and Functions
+## Part 2: C++ Pointers and Functions `[20H]`
 
 ### Lecture 07 - [Pointers & References]()
 ### Lecture 08 - [Functions]()
