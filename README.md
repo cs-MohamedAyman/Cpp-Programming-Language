@@ -1,4 +1,4 @@
-# Cpp-Programming-Language
+# Cpp-Programming-Language `50H`
 Cpp programming language lectures for computer science students.
 
 ## Part 1: C++ Basics and Arrays `[25H]`
