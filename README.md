@@ -173,3 +173,10 @@ Cpp programming language lectures for computer science students.
   <li>Iterator Module</li>
 </ul>
 </details>
+
+## Textbooks
+
+* ***C++ Primer Stanley***, B. Lippman and Josee lajoie and Barbara E. Moo
+* ***Effective Modern C++***, Scott Meyers
+* ***Accelerated C++***, Andrew Koenig and Barbara E. Moo
+* ***C++: The Complete Reference***, Herbert Schildt
