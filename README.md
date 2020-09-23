@@ -1,7 +1,7 @@
 # Cpp-Programming-Language `50H`
 Cpp programming language lectures for computer science students.
 
-## `Part 1`: C++ Basics and Arrays `25H`
+## `Part 1:` C++ Basics and Arrays `25H`
 
 ### Lecture 01 - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture%2001%20-%20Overview)
 <details>
@@ -87,7 +87,7 @@ Cpp programming language lectures for computer science students.
 </ul>
 </details>
 
-## `Part 2`: C++ Pointers and Functions `25H`
+## `Part 2:` C++ Pointers and Functions `25H`
 
 ### Lecture 07 - [Pointers & References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture%2007%20-%20Pointers%20%26%20References)
 <details>
