@@ -195,3 +195,7 @@ Cpp programming language lectures for computer science students.
 * ***C++ For C Programmers, Part A*** by University of California, Santa Cruz
 * ***C++ For C Programmers, Part B*** by University of California, Santa Cruz
 * ***Computational Thinking with Beginning C Programming Specialization*** by University of Colorado Boulder
+
+<img align="right" width="80" height="50" src="https://github.com/cs-MohamedAyman/YouTube-Playlists/blob/master/organizations-logos/youtube.jpg">
+
+## Youtube-Playlists
