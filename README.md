@@ -1,3 +1,5 @@
+<img align="right" width="120" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/cpp.jpg">
+
 # Cpp-Programming-Language `50H`
 Cpp programming language lectures for computer science students.
 
