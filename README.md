@@ -5,7 +5,7 @@ Cpp programming language lectures for computer science students.
 
 ## `Part 1:` C++ Basics and Arrays `25H`
 
-### Lecture 01 - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-01-Overview)
+## Lecture 01 - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-01-Overview)
 ### 1.1- History of C++
 ### 1.2- Interpreter vs. Compiler
 ### 1.3- C++ Identifiers and Reserved Words
@@ -13,7 +13,7 @@ Cpp programming language lectures for computer science students.
 ### 1.5- Multi-Line Statements
 ### 1.6- Quotation and Comments
 
-### Lecture 02 - [Variable Types](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-02-Variable-Types)
+## Lecture 02 - [Variable Types](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-02-Variable-Types)
 ### 2.1- C++ Variables
 ### 2.2- C++ Integers
 ### 2.3- C++ Floats
@@ -21,7 +21,7 @@ Cpp programming language lectures for computer science students.
 ### 2.5- C++ Arrays
 ### 2.6- Data Type Conversion
 
-### Lecture 03 - [Basic Operations](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-03-Basic-Operations)
+## Lecture 03 - [Basic Operations](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-03-Basic-Operations)
 ### 3.1- Arithmetic Operators
 ### 3.2- Comparison Operators
 ### 3.3- Bitwise Operators
@@ -29,7 +29,7 @@ Cpp programming language lectures for computer science students.
 ### 3.5- Logical Operators
 ### 3.6- Operators Precedence
 
-### Lecture 04 - [Conditions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-04-Conditions)
+## Lecture 04 - [Conditions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-04-Conditions)
 ### 4.1- Decision making Definition
 ### 4.2- IF Statement
 ### 4.3- IF and ELSE Statements
@@ -38,7 +38,7 @@ Cpp programming language lectures for computer science students.
 ### 4.6- Single Statement Suites
 ### 4.7- Switch Statement
 
-### Lecture 05 - [Loops](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-05-Loops)
+## Lecture 05 - [Loops](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-05-Loops)
 ### 5.1- Loop Definition
 ### 5.2- While Loop Statements
 ### 5.3- Do While Loop Statements
@@ -46,7 +46,7 @@ Cpp programming language lectures for computer science students.
 ### 5.5- Nested Loops
 ### 5.6- Loop Control Statements
 
-### Lecture 06 - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-06-Arrays)
+## Lecture 06 - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-06-Arrays)
 ### 6.1- Introduction to Array
 ### 6.2- Declaring and Initializing Arrays
 ### 6.3- Accessing Array Elements
@@ -55,7 +55,7 @@ Cpp programming language lectures for computer science students.
 
 ## `Part 2:` C++ Pointers and Functions `25H`
 
-### Lecture 07 - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
+## Lecture 07 - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
 ### 7.1- Introduction to Pointers
 ### 7.2- Incrementing and Decrementing Pointers
 ### 7.3- Pointer Comparisons
@@ -63,7 +63,7 @@ Cpp programming language lectures for computer science students.
 ### 7.5- Pointer to a pointer
 ### 7.6- Reference Variables
 
-### Lecture 08 - [Functions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-08-Functions)
+## Lecture 08 - [Functions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-08-Functions)
 ### 8.1- Function Definition
 ### 8.2- Calling a Function
 ### 8.3- Return Statement
@@ -73,7 +73,7 @@ Cpp programming language lectures for computer science students.
 ### 8.7- Function Prototype
 ### 8.8- Global and Local Variables
 
-### Lecture 09 - [Strings](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-09-Strings)
+## Lecture 09 - [Strings](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-09-Strings)
 ### 9.1- Introduction to String
 ### 9.2- Basic String Operations
 ### 9.3- Capacity Functions
@@ -82,7 +82,7 @@ Cpp programming language lectures for computer science students.
 ### 9.6- Iterator Functions
 ### 9.7- Manipulating Functions
 
-### Lecture 10 - [Structures](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-10-Structures)
+## Lecture 10 - [Structures](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-10-Structures)
 ### 10.1- Introduction to Structures
 ### 10.2- Constructor and Methods
 ### 10.3- Accessing Struct Members
@@ -90,14 +90,14 @@ Cpp programming language lectures for computer science students.
 ### 10.5- Nested Structs
 ### 10.6- Pointer of Structure
 
-### Lecture 11 - [Enumerations and Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-11-Enumerations-and-Unions)
+## Lecture 11 - [Enumerations and Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-11-Enumerations-and-Unions)
 ### 11.1- Introduction to Enums and Unions
 ### 11.2- Macro and Typedef
 ### 11.3- Structures vs Unions
 ### 11.4- Pointer of Enums and Unions
 ### 11.5- Applications of Enum and Union
 
-### Lecture 12 - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
+## Lecture 12 - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
 ### 12.1- Numbers in C++
 ### 12.2- Math Module
 ### 12.3- Numeric Module
