@@ -8,10 +8,10 @@ Cpp programming language lectures for computer science students.
 ### Lecture 01 - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-01-Overview)
 ### 1.1- History of C++
 ### 1.2- Interpreter vs. Compiler
-### 1.3- C++ Identifiers & Reserved Words
+### 1.3- C++ Identifiers and Reserved Words
 ### 1.4- Lines and Indentation
 ### 1.5- Multi-Line Statements
-### 1.6- Quotation & Comments
+### 1.6- Quotation and Comments
 
 ### Lecture 02 - [Variable Types](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-02-Variable-Types)
 ### 2.1- C++ Variables
@@ -48,16 +48,16 @@ Cpp programming language lectures for computer science students.
 
 ### Lecture 06 - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-06-Arrays)
 ### 6.1- Introduction to Array
-### 6.2- Declaring & Initializing Arrays
+### 6.2- Declaring and Initializing Arrays
 ### 6.3- Accessing Array Elements
 ### 6.4- Multi-dimensional Arrays
 ### 6.5- Dynamic Arrays
 
 ## `Part 2:` C++ Pointers and Functions `25H`
 
-### Lecture 07 - [Pointers & References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
+### Lecture 07 - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
 ### 7.1- Introduction to Pointers
-### 7.2- Incrementing & Decrementing Pointers
+### 7.2- Incrementing and Decrementing Pointers
 ### 7.3- Pointer Comparisons
 ### 7.4- Array of Pointers
 ### 7.5- Pointer to a pointer
@@ -67,11 +67,11 @@ Cpp programming language lectures for computer science students.
 ### 8.1- Function Definition
 ### 8.2- Calling a Function
 ### 8.3- Return Statement
-### 8.4- Passing by Reference & Value
+### 8.4- Passing by Reference and Value
 ### 8.5- Function Arguments
 ### 8.6- Anonymous Function
 ### 8.7- Function Prototype
-### 8.8- Global & Local Variables
+### 8.8- Global and Local Variables
 
 ### Lecture 09 - [Strings](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-09-Strings)
 ### 9.1- Introduction to String
@@ -90,12 +90,12 @@ Cpp programming language lectures for computer science students.
 ### 10.5- Nested Structs
 ### 10.6- Pointer of Structure
 
-### Lecture 11 - [Enumerations & Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-11-Enumerations-and-Unions)
-### 11.1- Introduction to Enums & Unions
-### 11.2- Macro & Typedef
+### Lecture 11 - [Enumerations and Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-11-Enumerations-and-Unions)
+### 11.1- Introduction to Enums and Unions
+### 11.2- Macro and Typedef
 ### 11.3- Structures vs Unions
-### 11.4- Pointer of Enums & Unions
-### 11.5- Applications of Enum & Union
+### 11.4- Pointer of Enums and Unions
+### 11.5- Applications of Enum and Union
 
 ### Lecture 12 - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
 ### 12.1- Numbers in C++
