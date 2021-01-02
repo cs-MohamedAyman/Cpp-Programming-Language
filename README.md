@@ -28,7 +28,9 @@ Cpp programming language lectures for computer science students.
 * ***C++ Primer Stanley***, B. Lippman and Josee lajoie and Barbara E. Moo
 * ***Effective Modern C++***, Scott Meyers
 * ***Accelerated C++***, Andrew Koenig and Barbara E. Moo
-* ***C++: The Complete Reference***, Herbert Schildt
+* ***C++ The Complete Reference***, Herbert Schildt
+* ***C++ TutorialsPoint***
+* ***A Complete Guide to Programming in C++***, Ulla Kirch-Prinz
 
 <img align="right" width="90" height="50" src="https://github.com/cs-MohamedAyman/Coursera-Specializations/blob/master/organizations-logos/coursera.jpg">
 
