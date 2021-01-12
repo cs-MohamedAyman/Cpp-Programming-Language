@@ -1,148 +1,190 @@
-'''
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
 Assigning values to the grid
 The grid will look like this:
   0,0 | 0,1 | 0,2
   1,0 | 1,1 | 1,2
   2,0 | 2,1 | 2,2
-'''
-N = 3
-grid = [['.'] * N for i in range(N)]
+*/
+const int N = 3;
+char grid[N][N];
 
-#This function prints the grid of Tic-Tac-Toe as the game progresses
-def print_grid():
-    print("Player 1: X  vs  Player 2: O")
-    print('--' + '---' * N + '--')
-    for i in range(N):
-        print(end='|  ')
-        for j in range(N):
-            print(grid[i][j], end='  ')
-        print(end='|')
-        print()
-        print('--' + '---' * N + '--')
-
-#This function checks if row or column or diagonal is full with same characters
-def check_win():
-    #If row is full with same characters, 
-	#the game is over and the player with that character has won
-	for i in range(N):
-		s = set()
-		for j in range(N):
-			s |= {grid[i][j]}
-		if len(s) == 1 and '.' not in s:
-			return True
-    #If column is full with same characters, 
-	#the game is over and the player with that character has won
-	for i in range(N):
-		s = set()
-		for j in range(N):
-			s |= {grid[j][i]}
-		if len(s) == 1 and '.' not in s:
-			return True
-    #If diagonal is full with same characters, 
-	#the game is over and the player with that character has won
-	s = set()
-	for i in range(N):
-		s |= {grid[i][i]}
-	if len(s) == 1 and '.' not in s:
-		return True
-    #If diagonal is full with same characters, 
-	#the game is over and the player with that character has won
-	s = set()
-	for i in range(N):
-		s |= {grid[i][N-i-1]}
-	if len(s) == 1 and '.' not in s:
-		return True
-	return False
-
-#This function checks if row or column or diagonal is full with same characters
-def check_tie(mark):
-    #If row a single type of characters
-	for i in range(N):
-		s = {mark}
-		for j in range(N):
-			if grid[i][j] != '.':
-				s |= {grid[i][j]}
-		if len(s) == 1:
-			return False
-    #If column a single type of characters
-	for i in range(N):
-		s = {mark}
-		for j in range(N):
-			if grid[j][i] != '.':
-				s |= {grid[j][i]}
-		if len(s) == 1:
-			return False
-    #If diagonal a single type of characters
-	s = {mark}
-	for i in range(N):
-		if grid[i][i] != '.':
-			s |= {grid[i][i]}
-	if len(s) == 1:
-			return False
-    #If diagonal a single type of characters
-	s = {mark}
-	for i in range(N):
-		if grid[i][N-i-1] != '.':
-			s |= {grid[i][N-i-1]}
-	if len(s) == 1:
-		return False
-	return True
-
-#This function checks if given cell is empty or not 
-def check_empty(i, j):
-	return grid[i][j] == '.'
-
-#This function checks if given position is valid or not 
-def check_valid_position(i, j):
-	return 0 <= i < N and 0 <= j < N
-
-#This function sets a value to a cell
-def set_cell(i, j, mark):
-	grid[i][j] = mark
-
-#This function clears the grid
-def grid_clear():
-	global grid
-	grid = [['.'] * N for i in range(N)]
-
-
-#MAIN FUNCTION
-def play_game():
-    print("Tic-Tac-Toe Game!")
-    print("Welcome...")
-    print("============================")
-    player = 0
-    while True:
-        #Prints the grid
-        print_grid()
-        #Set mark value based on the player
-        mark = 'X' if player == 0 else 'O'
-        #Takes input from the user to fill in the grid
-        print('Player %s' % mark)
-        i, j = map(int, input('Enter the row index and column index: ').split())
-        while not check_valid_position(i, j) or not check_empty(i, j):
-            i, j = map(int, input('Enter a valid row index and a valid column index: ').split())
-        #Set the input position with the mark
-        set_cell(i, j, mark)
-        #Check if the state of the grid has a win state
-        if check_win():
-            #Prints the grid
-            print_grid()
-            print('Congrats, Player %s is won!' % mark)
-            break
-        #Check if the state of the grid has a tie state
-        if check_tie(mark):
-            #Prints the grid
-            print_grid()
-            print("Woah! That's a tie!")
-            break		
-        #Player number changes after each turn
-        player = 1 - player 
-
-
-while True:
-	play_game()
-	grid_clear()
-	c = input('Play Again [Y/N] ')
-	if c not in 'yY':
-		break
+//This function prints the grid of Tic-Tac-Toe as the game progresses
+void print_grid() {
+    cout << "Player 1: X  vs  Player 2: O\n";
+    cout << "--";
+    for (int i = 0; i < N; cout << "---", i++);
+    cout << "--\n";
+    for (int i = 0; i < N; i++) {
+        cout << "|  ";
+        for (int j = 0; j < N; j++)
+            cout << grid[i][j] << "  ";
+        cout << "|\n";
+        cout << "--";
+        for (int i = 0; i < N; cout << "---", i++);
+        cout << "--\n";
+    }
+}
+//This function checks if row or column or diagonal is full with same characters
+bool check_win() {
+    char s;
+    int cnt;
+    //If row is full with same characters, 
+	//the game is over and the player with that character has won
+    for (int i = 0; i < N; i++) {
+		s = grid[i][0];
+		cnt = 0;
+        for (int j = 0; j < N; j++)
+			if (s == grid[i][j])
+			    cnt ++;
+		if (cnt == N && s != '.')
+			return true;
+    }
+    //If column is full with same characters, 
+	//the game is over and the player with that character has won
+    for (int i = 0; i < N; i++) {
+		s = grid[0][i];
+		cnt = 0;
+        for (int j = 0; j < N; j++)
+			if (s == grid[j][i])
+			    cnt ++;
+		if (cnt == N && s != '.')
+			return true;
+    }
+    //If diagonal 1 is full with same characters, 
+	//the game is over and the player with that character has won
+    s = grid[0][0];
+	cnt = 0;
+    for (int i = 0; i < N; i++)
+		if (s == grid[i][i])
+		    cnt ++;
+	if (cnt == N && s != '.')
+		return true;
+    //If diagonal 2 is full with same characters, 
+	//the game is over and the player with that character has won
+    s = grid[N-1][0];
+	cnt = 0;
+    for (int i = 0; i < N; i++)
+		if (s == grid[i][N-i-1])
+		    cnt ++;
+	if (cnt == N && s != '.')
+		return true;
+    //Otherwise, there isn't a win state in the game, 
+    //if all cases above not reached	
+    return false;
+}
+//This function checks if row or column or diagonal is full with same characters
+bool check_tie(char mark) {
+    char s;
+    int cnt;
+    //If row a single type of characters
+    for (int i = 0; i < N; i++) {
+		s = mark;
+		cnt = 0;
+        for (int j = 0; j < N; j++)
+			if (grid[i][j] != '.' && s != grid[i][j])
+			    cnt ++;
+		if (cnt == 0)
+			return false;
+    }
+    //If column a single type of characters
+    for (int i = 0; i < N; i++) {
+		s = mark;
+		cnt = 0;
+        for (int j = 0; j < N; j++)
+			if (grid[j][i] != '.' && s != grid[j][i])
+			    cnt ++;
+		if (cnt == 0)
+			return false;
+    }
+    //If diagonal a single type of characters
+	s = mark;
+	cnt = 0;
+    for (int i = 0; i < N; i++)
+		if (grid[i][i] != '.' && s != grid[i][i])
+		    cnt ++;
+	if (cnt == 0)
+		return false;
+    //If diagonal a single type of characters
+	s = mark;
+	cnt = 0;
+    for (int i = 0; i < N; i++)
+		if (grid[i][N-i-1] != '.' && s != grid[i][N-i-1])
+		    cnt ++;
+	if (cnt == 0)
+		return false;
+    //Otherwise, there isn't a win state in the game, 
+    //if all cases above not reached	
+	return true;
+}
+//This function checks if given cell is empty or not 
+bool check_empty(int i, int j) {
+	return grid[i][j] == '.';
+}
+//This function checks if given position is valid or not 
+bool check_valid_position(int i, int j) {
+	return 0 <= i && i < N && 0 <= j && j < N;
+}
+//This function sets a value to a cell
+void set_cell(int i, int j, char mark) {
+	grid[i][j] = mark;
+}
+//This function clears the grid
+void grid_clear() {
+    for (int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            grid[i][j] = '.';
+}
+//MAIN FUNCTION
+void play_game() {
+    cout << "Tic-Tac-Toe Game!\n";
+    cout << "Welcome...\n";
+    cout << "============================\n";
+    bool player = 0;
+    while (true) {
+        //Prints the grid
+        print_grid();
+        //Set mark value based on the player
+        char mark = (player == 0? 'X' : 'O');
+        //Takes input from the user to fill in the grid
+        cout << "Player " << mark << '\n';
+        int i, j;
+        cout << "Enter the row index and column index: ";
+        cin >> i >> j;
+        while (!check_valid_position(i, j) or !check_empty(i, j)) {
+            cout << "Enter a valid row index and a valid column index: ";
+            cin >> i >> j;
+        }
+        //Set the input position with the mark
+        set_cell(i, j, mark);
+        //Check if the state of the grid has a win state
+        if (check_win()) {
+            //Prints the grid
+            print_grid();
+            cout << "Congrats, Player " << mark << " is won!\n";
+            break;
+        }
+        //Check if the state of the grid has a tie state
+        if (check_tie(mark)) {
+            //Prints the grid
+            print_grid();
+            cout << "Woah! That's a tie!\n";
+            break;
+        }
+        //Player number changes after each turn
+        player = 1 - player;
+    }
+}
+int main() {
+    while (true) {
+    	grid_clear();
+    	play_game();
+    	char c;
+    	cout << "Play Again [Y/N] ";
+    	cin >> c;
+    	if (c != 'y' && c != 'Y')
+    		break;
+    }
+}
