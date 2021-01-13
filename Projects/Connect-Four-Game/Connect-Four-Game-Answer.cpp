@@ -118,7 +118,7 @@ bool check_valid_column(int i) {
 }
 //This function sets a value to a cell
 void set_cell(int i, char mark) {
-    for (int j = N-1; j > 0; j--) {
+    for (int j = N-1; j > -1; j--) {
 		if (grid[j][i] == '.') {
 			grid[j][i] = mark;
 			break;
