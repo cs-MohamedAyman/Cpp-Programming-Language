@@ -1,199 +1,238 @@
-'''
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
 Assigning values to the grid
 The grid will look like this:
   0,0 | 0,1 | 0,2 | 0,3 
   1,0 | 1,1 | 1,2 | 1,3 
   2,0 | 2,1 | 2,2 | 2,3 
   3,0 | 3,1 | 3,2 | 3,3 
-'''
-import random
-N = 4
-grid = [[0] * N for i in range(N)]
+*/
+const int N = 4;
+int grid[N][N];
 
-#This function prints the grid of 2048 Game as the game progresses
-def print_grid():
-    print('--' + '-----' * N + '----')
-    for i in range(N):
-        print(end='|  ')
-        for j in range(N):
-            r = (5 - len(str(grid[i][j]))) // 2
-            e = (' ' * r) + str(grid[i][j]) + (' ' * r)
-            if len(e) < 5: e += ' '
-            print(e, end='')
-        print(end='  |')
-        print()
-        print('--' + '-----' * N + '----')
-
-#This function generates a cell with value 2 
-def generate_cell():
-    a = random.randint(0, N-1)
-    b = random.randint(0, N-1)
-    while grid[a][b] != 0:
-        a = random.randint(0, N-1)
-        b = random.randint(0, N-1)
-    grid[a][b] = 2
-
-#This function checks if the game state reachs 2048 or not 
-def check_win():
-    for i in range(N):
-        for j in range(N):
-            if grid[i][j] == 2048:
-                return True
-    return False
-
-#This function rotates the grid by 90 degree
-def rotate_90():
-    for i in range(N//2):
-        for j in range(i, N-i-1):
-            k                  = grid[i][j]
+//This function prints the grid of 2048 Game as the game progresses
+void print_grid() {
+    cout << "--";
+	for (int i = 0; i < N; cout << "-----", i++);
+	cout << "----\n";
+	for (int i = 0; i < N; i++) {
+        cout << "|  ";
+		for (int j = 0; j < N; j++) {
+            int r = (5 - to_string(grid[i][j]).size()) / 2;
+            string e = "";
+			for (int t = 0; t < r; e += " ", t++)
+			;
+			e += (grid[i][j] != 0? to_string(grid[i][j]) : " ");
+			for (int t = 0; t < r; e += " ", t++)
+			;
+            if (e.size() < 5) e += " ";
+            cout << e;
+		}
+        cout << "  |\n";
+        cout << "--";
+		for (int i = 0; i < N; cout << "-----", i++);
+		cout << "----\n";
+	}
+}
+//This function generates a cell with value 2 
+void generate_cell() {
+    int a = rand() % N;
+	int b = rand() % N;
+    while (grid[a][b] != 0) {
+        a = rand() % N;
+        b = rand() % N;
+	}
+    grid[a][b] = 2;
+}
+//This function rotates the grid by 90 degree
+void rotate_90() {
+	for (int i = 0; i < N/2; i++) {
+		for (int j = i; j < N-i-1; j++) {
+            int k              = grid[i][j];
             grid[i][j]         = grid[N-j-1][i];
             grid[N-j-1][i]     = grid[N-i-1][N-j-1];
-            grid[N-i-1][N-j-1] = grid[j][N-i-1]
-            grid[j][N-i-1]     = k
+            grid[N-i-1][N-j-1] = grid[j][N-i-1];
+            grid[j][N-i-1]     = k;
+		}
+	}
+}
+//This function checks if the game state reachs 2048 or not 
+bool check_win() {
+    //Search for cell with value 2048
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+            if (grid[i][j] == 2048)
+                return true;
+    return false;
+}
+//This function checks if the direction have state reachs 2048 or not 
+bool check_available_direction() {
+    //Search for cell with value 2048
+	for (int i = 0; i < N; i++) {
+        int j = 0;
+        while (j < N && grid[i][j] == 0) j +=1;
+        while (j < N && grid[i][j] != 0) j +=1;
+        if (j < N) return true;
+		for (int k = 0; k < N-1; k++)
+            if (grid[i][k] == grid[i][k+1] && grid[i][k] != 0)
+                return true;
+	}
+    return false;
+}
+//This function checks if any direction have state reachs 2048 or not
+bool check_available_move(int d) {
+    bool res = false;
+    //check direction right
+    if (d == 3) res = check_available_direction();
+    rotate_90();
+    //check direction down
+    if (d == 5) res = check_available_direction();
+    rotate_90();
+    //check direction left
+    if (d == 1) res = check_available_direction();
+    rotate_90();
+    //check direction up
+    if (d == 2) res = check_available_direction();
+    rotate_90();
+    return res;
+}
+//This function checks if the game state over or not
+bool check_full() {
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+            if (grid[i][j] == 0)
+                return false;
+	for (int i = 0; i < N-1; i++)
+        if (grid[N-1][i] == grid[N-1][i+1])
+            return false;
+	for (int i = 0; i < N-1; i++)
+        if (grid[i][N-1] == grid[i+1][N-1])
+            return false;
+	for (int i = 0; i < N-1; i++)
+		for (int j = 0; j < N-1; j++)
+            if (grid[i][j] == grid[i+1][j] || grid[i][j+1] == grid[i][j])
+                return false;
+    return true;
+}
+//This function merges the grid with given direction 
+void merge() {
+	for (int i = 0; i < N; i++) {
+        int j = N-1;
+        while (j > 0) {
+            if (grid[i][j] == grid[i][j-1] && grid[i][j] != 0) {
+                grid[i][j] = 0;
+                grid[i][j-1] *= 2;
+                j -= 1;
+			}
+            j -= 1;
+		}
+	}
+}
+//This function checks if the direction have state reachs 2048 or not 
+void merge_direction(int d) {
+    //merge direction right
+    if (d == 3) merge();
+    rotate_90();
+    //merge direction down
+    if (d == 5) merge();
+    rotate_90();
+    //merge direction left
+    if (d == 1) merge();
+    rotate_90();
+    //merge direction up
+    if (d == 2) merge();
+    rotate_90();
+}
+//This function moves the grid with given direction 
+void move() {
+	for (int i = 0; i < N; i++) {
+		int idx = 0;
+        int temp[N] = {0};
+		for (int j = 0; j < N; j++) {
+            if (grid[i][j] != 0) {
+                temp[idx] = grid[i][j];
+				idx ++;
+			}
+		}
+		for (int j = 0; j < N; j++)
+            grid[i][j] = (j < idx? temp[j] : 0);
+	}
+}
+//This function checks if the direction have state reachs 2048 or not 
+void move_direction(int d) {
+    //move direction left
+    if (d == 1) move();
+    rotate_90();
+    //move direction up
+    if (d == 2) move();
+    rotate_90();
+    //move direction right
+    if (d == 3) move();
+    rotate_90();
+    //move direction down
+    if (d == 5) move();
+    rotate_90();
+}
+//This function checks if given position is valid or not 
+bool check_valid_direction(int i) {
+	return i == 1 || i == 2 || i == 3 || i == 5;
+}
+//This function clears the grid
+void grid_clear() {
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+			grid[i][j] = 0;
+}
 
-#This function checks if the direction have state reachs 2048 or not 
-def check_available_direction():
-    for i in range(N):
-        j = 0
-        while j < N and grid[i][j] == 0: j +=1 
-        while j < N and grid[i][j] != 0: j +=1 
-        if j < N: return True
-        for k in range(N-1):
-            if grid[i][k] == grid[i][k+1] and grid[i][k] != 0:
-                return True
-    return False
-
-#This function checks if any direction have state reachs 2048 or not
-def check_available_move(dir):
-    res = False
-    #check direction right
-    if dir == 3: res = check_available_direction()
-    rotate_90()
-    #check direction down
-    if dir == 5: res = check_available_direction()
-    rotate_90()
-    #check direction left
-    if dir == 1: res = check_available_direction()
-    rotate_90()
-    #check direction up
-    if dir == 2: res = check_available_direction()
-    rotate_90()
-    return res
-
-#This function checks if the game state over or not
-def check_full():
-    for i in range(N):
-        for j in range(N):
-            if grid[i][j] == 0:
-                return False
-    for i in range(N-1):
-        if grid[N-1][i] == grid[N-1][i+1]:
-            return False
-    for i in range(N-1):
-        if grid[i][N-1] == grid[i+1][N-1]:
-            return False
-    for i in range(N-1):
-        for j in range(N-1):
-            if grid[i][j] == grid[i+1][j] or grid[i][j+1] == grid[i][j]:
-                return False
-    return True
-
-#This function merges the grid with given direction 
-def merge():
-    for i in range(N):
-        j = N-1
-        while j > 0:
-            if grid[i][j] == grid[i][j-1] and grid[i][j] != 0:
-                grid[i][j] = 0
-                grid[i][j-1] *= 2
-                j -= 1
-            j -= 1
-
-#This function checks if the direction have state reachs 2048 or not 
-def merge_direction(dir):
-    #merge direction right
-    if dir == 3: merge()
-    rotate_90()
-    #merge direction down
-    if dir == 5: merge()
-    rotate_90()
-    #merge direction left
-    if dir == 1: merge()
-    rotate_90()
-    #merge direction up
-    if dir == 2: merge()
-    rotate_90()
-
-#This function moves the grid with given direction 
-def move():
-    for i in range(N):
-        temp = []
-        for j in range(N):
-            if grid[i][j] != 0:
-                temp += [grid[i][j]]
-        for j in range(N):
-            grid[i][j] = temp[j] if j < len(temp) else 0
-
-#This function checks if the direction have state reachs 2048 or not 
-def move_direction(dir):
-    #move direction left
-    if dir == 1: move()
-    rotate_90()
-    #move direction up
-    if dir == 2: move()
-    rotate_90()
-    #move direction right
-    if dir == 3: move()
-    rotate_90()
-    #move direction down
-    if dir == 5: move()
-    rotate_90()
-
-#This function checks if given position is valid or not 
-def check_valid_direction(i):
-	return i in [1, 2, 3, 5]
-
-#This function clears the grid
-def grid_clear():
-	global grid
-	grid = [[0] * N for i in range(N)]
-
-
-#MAIN FUNCTION
-def play_game():
-    print("2048 Game!")
-    print("Welcome...")
-    print("============================")
-    while True:
-        #Generate a cell in the grid
-        generate_cell()
-        #Prints the grid
-        print_grid()
-        i = int(input('Enter the direction: '))
-        while not check_valid_direction(i) or not check_available_move(i):
-            i = int(input('Enter a valid direction: '))
-        #Move with the input direction
-        move_direction(i)
-        #Merge with the input direction
-        merge_direction(i)
-        #Move with the input direction
-        move_direction(i)
-        #Check if the state of the grid has a win state
-        if check_win():
-            #Prints the grid
-            print_grid()
-            print('Congrats, You won!')
-            break
-        #Check if the state of the grid has a tie state
-        if check_full():
-            #Prints the grid
-            print_grid()
-            print("Woah! That's a tie!")
-            break
-
-while True:
-	play_game()
-	grid_clear()
-	c = input('Play Again [Y/N] ')
-	if c not in 'yY':
-		break
+//MAIN FUNCTION
+void play_game() {
+    cout << "2048 Game!\n";
+    cout << "Welcome...\n";
+    cout << "============================\n";
+    while (true) {
+        //Generate a cell in the grid
+        generate_cell();
+        //Prints the grid
+        print_grid();
+		int i;
+        cout << "Enter the direction: ";
+		cin >> i;
+        while (!check_valid_direction(i) || !check_available_move(i)) {
+            cout << "Enter a valid direction: ";
+			cin >> i;
+		}
+        //Move with the input direction
+        move_direction(i);
+        //Merge with the input direction
+        merge_direction(i);
+        //Move with the input direction
+        move_direction(i);
+        //Check if the state of the grid has a win state
+        if (check_win()) {
+            //Prints the grid
+            print_grid();
+            cout << "Congrats, You won!\n";
+            break;
+		}
+        //Check if the state of the grid has a tie state
+        if (check_full()) {
+            //Prints the grid
+            print_grid();
+            cout << "Woah! That's a tie!\n";
+            break;
+		}
+	}
+}
+int main() {
+	while (true) {
+		grid_clear();
+		play_game();
+    	char c;
+    	cout << "Play Again [Y/N] ";
+    	cin >> c;
+    	if (c != 'y' && c != 'Y')
+    		break;
+	}
+}
