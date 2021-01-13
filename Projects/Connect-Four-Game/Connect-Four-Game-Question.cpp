@@ -33,34 +33,10 @@ void print_grid() {
 }
 //This function checks if row or column or diagonal is full with same characters
 bool check_win() {
-    //If row is full with same characters, 
-	//the game is over and the player with that character has won
-
-    //If column is full with same characters, 
-	//the game is over and the player with that character has won
-
-    //If diagonal is full with same characters, 
-	//the game is over and the player with that character has won
-
-    //If diagonal is full with same characters, 
-	//the game is over and the player with that character has won
-
-    //Otherwise, there isn't a win state in the game, 
-    //if all cases above not reached
 
 }
 //This function checks if row or column or diagonal is full with same characters
 bool check_tie(char mark) {
-    //If row a single type of characters
-
-    //If column a single type of characters
-
-    //If diagonal a single type of characters
-
-    //If diagonal a single type of characters
-
-    //Otherwise, there isn't a win state in the game, 
-    //if all cases above not reached
 
 }
 //This function checks if given cell is empty or not 
