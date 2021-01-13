@@ -1,4 +1,7 @@
-'''
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
 Assigning values to the grid
 The grid will look like this:
   0,0 | 0,1 | 0,2 | 0,3 | 0,4 | 0,5 | 0,6 | 0,7 | 0,8
@@ -10,123 +13,177 @@ The grid will look like this:
   6,0 | 6,1 | 6,2 | 6,3 | 6,4 | 6,5 | 6,6 | 6,7 | 6,8
   7,0 | 7,1 | 7,2 | 7,3 | 7,4 | 7,5 | 7,6 | 7,7 | 7,8
   8,0 | 8,1 | 8,2 | 8,3 | 8,4 | 8,5 | 8,6 | 8,7 | 8,8
-'''
-import random
-N = 9
-grid = [[0] * N for i in range(N)]
+*/
+const int N = 9;
+const int root_N = 3;
+int grid[N][N];
+int cpy_grid[N][N];
 
-#This function prints the grid of 2048 Game as the game progresses
-def print_grid():
-    print('-' + '----' * N)
-    for i in range(N):
-        print(end='|  ')
-        for j in range(N):
-            if j % 3 == 0 and j > 0:
-                print('|  ', end='')
-            print(grid[i][j], end='  ')
-        print(end='|')
-        print()
-        if i % 3 == 2:
-            print('-' + '----' * N)
+//This function prints the grid of 2048 Game as the game progresses
+void print_grid() {
+	cout << "-";
+    for (int i = 0; i < N; cout << "----", i++);
+	cout << '\n';
+    for (int i = 0; i < N; i++) {
+        cout << "|  ";
+		for (int j = 0; j < N; j++) {
+            if (j % root_N == 0 && j > 0)
+                cout << "|  ";
+            cout << grid[i][j] << "  ";
+		}
+        cout << "|\n";
+        if (i % root_N == root_N - 1) {
+			cout << "-";
+			for (int i = 0; i < N; cout << "----", i++);
+			cout << '\n';
+		}
+	}
+}
+//This function checks if all rows and columns and boxes is full with all numbers
+bool check_win() {
+    //If row is not full with all numbers, the game is still running
+    for (int i = 0; i < N; i++) {
+        int s[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		for (int j = 0; j < N; j++) {
+            s[grid[i][j]] ++;
+			if (s[grid[i][j]] != 1 || grid[i][j] == 0)
+				return false;
+		}
+	}
+    //If column is not full with all numbers, the game is still running
+    for (int i = 0; i < N; i++) {
+        int s[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		for (int j = 0; j < N; j++) {
+            s[grid[j][i]] ++;
+			if (s[grid[j][i]] != 1 || grid[j][i] == 0)
+				return false;
+		}
+	}
+    //If box is not full with all numbers, the game is still running
+    for (int i = 0; i < N; i+=root_N) {
+		for (int j = 0; j < N; j+=root_N) {
+			int s[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+			for (int k = i; k < i+root_N; k++) {
+				for (int w = j; w < j+root_N; w++) {
+					s[grid[k][w]] ++;
+					if (s[grid[k][w]] != 1 || grid[k][w] == 0)
+						return false;
+				}
+			}
+		}
+	}
+    //Otherwise, there is a win state in the game, 
+    //if all cases above not reached		
+    return true;
+}
+//This function checks if given position is valid or not 
+bool check_valid_position(int i, int j) {
+    return 0 <= i && i < N && 0 <= j && j < N;
+}
+//This function checks if given cell is empty or not 
+bool check_empty_cell(int i, int j) {
+    return grid[i][j] == 0;
+}
+//This function checks if given cell is original or not
+bool check_original_cell(int i, int j) {
+    return cpy_grid[i][j] != 0;
+}
+//This function checks if the given cell is valid with the given numbers
+bool check_valid_value(int i, int j, int v) {
+	//Check delete case
+    if (v == 0)
+        return true;
+	//Check invalid value
+    if (v < 0 || v > N)
+        return false;
+	//Check duplicate in all rows
+    for (int k = 0; k < N; k++)
+        if (grid[i][k] == v)
+            return false;
+	//Check duplicate in all columns
+    for (int k = 0; k < N; k++)
+        if (grid[k][j] == v)
+            return false;
+	//Check duplicate in all boxes
+    int b = i/root_N*root_N;
+	int e = j/root_N*root_N;
+    for (int k = b; k < b+root_N; k++)
+		for (int w = e; w < e+root_N; w++)
+            if (grid[k][w] == v)
+                return false;
+    //Otherwise, the given value is valid,
+    //if all cases above not reached		
+    return true;
+}
+//This function sets a value to a cell
+void set_cell(int i, int j, int v) {
+	grid[i][j] = v;
+}
+//This function generates cells in the grid
+void generate_cells() {
+    int vals[root_N*N] = {0};
+    for (int i = 1; i < N+1; i++)
+		for (int j = 0; j < root_N; j++)
+			vals[(i-1)*root_N+j] = i;
+    for (int i = 0; i < N; i+=root_N) {
+		for (int j = 0; j < N; j+=root_N) {
+			for (int w = 0; w < root_N; w++) {
+                int k = rand() % (root_N*N);
+                while (vals[k] == -1 || !check_valid_value(i+w, j+w, vals[k]))
+                    k = (k + root_N + 1) % (root_N * N);
+                grid[i+w][j+w] = vals[k];
+                cpy_grid[i+w][j+w] = vals[k];
+                vals[k] = -1;
+            }
+		}
+	}
+}
+//This function clears the grid
+void grid_clear() {
+    for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			grid[i][j] = 0;
+			cpy_grid[i][j] = 0;
+		}
+	}
+}
 
-#This function checks if all rows and columns and boxes is full with all numbers
-def check_win():
-    for i in range(N):
-        s = set()
-        for j in range(N):
-            s.add(grid[i][j])
-        if len(s) != N or 0 in s:
-            return False
-    for i in range(N):
-        s = set()
-        for j in range(N):
-            s.add(grid[j][i])
-        if len(s) != N or 0 in s:
-            return False
-    for i in range(0, N, 3):
-        for j in range(0, N, 3):
-            s = set()
-            for k in range(i, i+3):
-                for w in range(j, j+3):
-                    s.add(grid[k][w])
-            if len(s) != N*N or 0 in s:
-                return False
-    return True
 
-#This function checks if given position is valid or not 
-def check_valid_position(i, j):
-    return 0 <= i < N and 0 <= j < N
-
-#This function checks if given cell is empty or not 
-def check_empty_cell(i, j):
-    return grid[i][j] == 0
-
-#This function checks if the given cell is valid with the given numbers
-def check_valid_value(i, j, v):
-    if v == 0:
-        return True
-    for k in range(N):
-        if grid[i][k] == v:
-            return False
-    for k in range(N):
-        if grid[k][j] == v:
-            return False
-    b, e = i//3*3, j//3*3
-    for k in range(b, b+3):
-        for w in range(e, e+3):
-            if grid[k][w] == v:
-                return False
-    return True
-
-#This function sets a value to a cell
-def set_cell(i, j, v):
-	grid[i][j] = v
-
-#This function generates cells in the grid
-def generate_cells():
-    vals = []
-    for i in range(1, N+1):
-        vals += [i] * (N//3)
-    for i in range(0, N, 3):
-        for j in range(0, N, 3):
-            for w in range(3):
-                random.shuffle(vals)
-                k = random.choice(vals)
-                while not check_valid_value(i+w, j+w, k):
-                    k = random.choice(vals)
-                set_cell(i+w, j+w, k)
-                vals.remove(k)
-
-#This function clears the grid
-def grid_clear():
-	global grid
-	grid = [[0] * N for i in range(N)]
-
-
-#MAIN FUNCTION
-def play_game():
-    print("Sudoku Game!")
-    print("Welcome...")
-    print("============================")
-    while True:
-        #Prints the grid
-        print_grid()
-        i, j, v = map(int, input('Enter the position and value: ').split())
-        while not check_valid_position(i, j) or not check_valid_value(i, j, v):
-            i, j, v = map(int, input('Enter a valid position and value: ').split())
-        #Set the input position with the value
-        set_cell(i, j, v)
-        #Check if the state of the grid has a win state
-        if check_win():
-            #Prints the grid
-            print_grid()
-            print('Congrats, You won!')
-            break
-
-while True:
-    generate_cells()
-    play_game()
-    grid_clear()
-    c = input('Play Again [Y/N] ')
-    if c not in 'yY':
-        break
+//MAIN FUNCTION
+void play_game() {
+    cout << "Sudoku Game!\n";
+    cout << "Welcome...\n";
+    cout << "============================\n";
+    while (true) {
+        //Prints the grid
+        print_grid();
+        int i, j, v;
+        cout << "Enter the position and value: ";
+        cin >> i >> j >> v;
+        while (!check_valid_position(i, j) || !check_valid_value(i, j, v) || check_original_cell(i, j)) {
+            cout << "Enter a valid position and value: ";
+            cin >> i >> j >> v;
+        }
+        //Set the input position with the value
+        set_cell(i, j, v);
+        //Check if the state of the grid has a win state
+        if (check_win()) {
+            //Prints the grid
+            print_grid();
+            cout << "Congrats, You won!\n";
+            break;
+		}
+	}
+}
+int main() {
+	while (true) {
+		grid_clear();
+		generate_cells();
+		play_game();
+    	char c;
+    	cout << "Play Again [Y/N] ";
+    	cin >> c;
+    	if (c != 'y' && c != 'Y')
+    		break;
+	}
+}
