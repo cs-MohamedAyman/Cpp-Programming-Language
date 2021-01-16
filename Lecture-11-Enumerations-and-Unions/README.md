@@ -1,8 +1,29 @@
 <img align="right" width="90" height="90" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/cpp.jpg">
 
 # Lecture 11 - Enumerations and Unions
-## 11.1- Introduction to Enums and Unions
-## 11.2- Macro and Typedef
-## 11.3- Structures vs Unions
-## 11.4- Pointer of Enums and Unions
-## 11.5- Applications of Enum and Union
+
+<details>
+	<summary>11.1- Introduction to Enums and Unions</summary>
+
+</details>
+
+<details>
+	<summary>11.2- Macro and Typedef</summary>
+
+</details>
+
+<details>
+	<summary>11.3- Structures vs Unions</summary>
+
+</details>
+
+<details>
+	<summary>11.4- Pointer of Enums and Unions</summary>
+
+</details>
+
+<details>
+	<summary>11.5- Applications of Enum and Union</summary>
+
+</details>
+
