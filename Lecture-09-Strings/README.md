@@ -1,10 +1,39 @@
 <img align="right" width="90" height="90" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/cpp.jpg">
 
 # Lecture 09 - Strings
-## 9.1- Introduction to String
-## 9.2- Basic String Operations
-## 9.3- Capacity Functions
-## 9.4- Element access Functions
-## 9.5- Modifiers Functions
-## 9.6- Iterator Functions
-## 9.7- Manipulating Functions
+
+<details>
+	<summary>9.1- Introduction to String</summary>
+
+</details>
+
+<details>
+	<summary>9.2- Basic String Operations</summary>
+
+</details>
+
+<details>
+	<summary>9.3- Capacity Functions</summary>
+
+</details>
+
+<details>
+	<summary>9.4- Element access Functions</summary>
+
+</details>
+
+<details>
+	<summary>9.5- Modifiers Functions</summary>
+
+</details>
+
+<details>
+	<summary>9.6- Iterator Functions</summary>
+
+</details>
+
+<details>
+	<summary>9.7- Manipulating Functions</summary>
+
+</details>
+
