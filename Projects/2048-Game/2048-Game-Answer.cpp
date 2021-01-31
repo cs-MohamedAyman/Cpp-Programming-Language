@@ -10,30 +10,35 @@ The grid will look like this:
   3,0 | 3,1 | 3,2 | 3,3 
 */
 const int N = 4;
+const int GOAL = 1 << (3*N-1);
 int grid[N][N];
 
 //This function prints the grid of 2048 Game as the game progresses
 void print_grid() {
-    cout << "--";
-	for (int i = 0; i < N; cout << "-----", i++);
-	cout << "----\n";
+	for (int i = 0; i < N; cout << "-", i++);
+	for (int i = 0; i < (N+4) * N; cout << "-", i++);
+	cout << "-\n";
 	for (int i = 0; i < N; i++) {
-        cout << "|  ";
+        cout << "|";
 		for (int j = 0; j < N; j++) {
-            int r = (5 - to_string(grid[i][j]).size()) / 2;
-            string e = "";
-			for (int t = 0; t < r; e += " ", t++)
-			;
-			e += (grid[i][j] != 0? to_string(grid[i][j]) : " ");
-			for (int t = 0; t < r; e += " ", t++)
-			;
-            if (e.size() < 5) e += " ";
-            cout << e;
+			string e = "";
+            if (grid[i][j] == 0) {
+				for (int t = 0; t < N+4; e += " ", t++);
+			}
+            else {
+                int str_len = to_string(grid[i][j]).size();
+                int r1 = ((N+4) - str_len + 1) / 2;
+                int r2 = ((N+4) - str_len) - r1;
+				for (int t = 0; t < r1; e += " ", t++);
+				e += to_string(grid[i][j]);
+				for (int t = 0; t < r2; e += " ", t++);
+			}
+			cout << e << "|";
 		}
-        cout << "  |\n";
-        cout << "--";
-		for (int i = 0; i < N; cout << "-----", i++);
-		cout << "----\n";
+		cout << "\n";
+		for (int t = 0; t < N; cout << "-", t++);
+		for (int t = 0; t < (N+4) * N; cout << "-", t++);
+		cout << "-\n";
 	}
 }
 //This function generates a cell with value 2 
@@ -63,7 +68,7 @@ bool check_win() {
     //Search for cell with value 2048
 	for (int i = 0; i < N; i++)
 		for (int j = 0; j < N; j++)
-            if (grid[i][j] == 2048)
+            if (grid[i][j] == GOAL)
                 return true;
     return false;
 }
@@ -188,7 +193,7 @@ void grid_clear() {
 
 //MAIN FUNCTION
 void play_game() {
-    cout << "2048 Game!\n";
+    cout << GOAL << " Game!\n";
     cout << "Welcome...\n";
     cout << "============================\n";
     while (true) {
