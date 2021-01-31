@@ -24,8 +24,7 @@ void print_grid() {
     int dd_len = to_string(N).size();
     for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
     for (int i = 0; i < root_N; cout << "---", i++);
-	cout << "-";
-	cout << '\n';
+    cout << "-\n";
     for (int i = 0; i < N; i++) {
         cout << "|  ";
 		for (int j = 0; j < N; j++) {
