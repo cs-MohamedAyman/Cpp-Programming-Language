@@ -21,20 +21,31 @@ int cpy_grid[N][N];
 
 //This function prints the grid of 2048 Game as the game progresses
 void print_grid() {
+    int dd_len = to_string(N).size();
+    for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
+    for (int i = 0; i < root_N; cout << "---", i++);
 	cout << "-";
-    for (int i = 0; i < N; cout << "----", i++);
 	cout << '\n';
     for (int i = 0; i < N; i++) {
         cout << "|  ";
 		for (int j = 0; j < N; j++) {
             if (j % root_N == 0 && j > 0)
                 cout << "|  ";
-            cout << grid[i][j] << "  ";
+            if (grid[i][j] == 0) {
+				for (int k = 0; k < dd_len; cout << ".", k++);
+				cout << "  ";
+			}
+            else {
+				for (int k = 0; k < dd_len - to_string(grid[i][j]).size(); cout << "0", k++);
+				cout << grid[i][j] << "  ";
+			}
 		}
-        cout << "|\n";
+		cout << "|";
+		cout << '\n';
         if (i % root_N == root_N - 1) {
+			for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
+			for (int i = 0; i < root_N; cout << "---", i++);
 			cout << "-";
-			for (int i = 0; i < N; cout << "----", i++);
 			cout << '\n';
 		}
 	}
@@ -63,23 +74,57 @@ bool check_valid_value(int i, int j, int v) {
 void set_cell(int i, int j, int v) {
 
 }
+//This function solve the grid
+bool solve_grid(int i, int j) {
+    if (j == N) {
+        i += 1;
+        j = 0;
+	}
+    if (i == N)
+        return true;
+    if (check_original_cell(i, j))
+        return solve_grid(i, j + 1);
+    for (int k = 1; k < N+1; k++) {
+        if (check_valid_value(i, j, k)) {
+            grid[i][j] = k;
+            cpy_grid[i][j] = k;
+            if (solve_grid(i, j + 1))
+                return true;
+		}
+        grid[i][j] = 0;
+        cpy_grid[i][j] = 0;
+	}
+    return false;
+}
 //This function generates cells in the grid
 void generate_cells() {
-    int vals[root_N*N] = {0};
-    for (int i = 1; i < N+1; i++)
-		for (int j = 0; j < root_N; j++)
-			vals[(i-1)*root_N+j] = i;
-    for (int i = 0; i < N; i+=root_N) {
-		for (int j = 0; j < N; j+=root_N) {
-			for (int w = 0; w < root_N; w++) {
-                int k = rand() % (root_N*N);
-                while (vals[k] == -1 || !check_valid_value(i+w, j+w, vals[k]))
-                    k = (k + root_N + 1) % (root_N * N);
-                grid[i+w][j+w] = vals[k];
-                cpy_grid[i+w][j+w] = vals[k];
-                vals[k] = -1;
-            }
+    //Generate cells in the diagonal boxes of the grid
+    for (int k = 0; k < N; k+=root_N) {
+		for (int i = 0; i < root_N; i++) {
+			for (int j = 0; j < root_N; j++) {
+                int n = rand() % (N + 1) + 1;
+                while (!check_valid_value(k+i, k+j, n) || check_original_cell(k+i, k+j))
+					n = rand() % N + 1;
+                grid[k+i][k+j] = n;
+                cpy_grid[k+i][k+j] = n;
+			}
 		}
+	}
+    //Solve the complete grid
+    solve_grid(0, 0);
+    //Remove cells in the grid to be solved
+    int prev_x = 0, prev_y = 0;
+    for (int k = 0; k < N*N - N/2*N; k++) {
+        int i = (rand() % N + prev_x + root_N) % N;
+        int j = (rand() % N + prev_y + root_N) % N;
+        while (!check_original_cell(i, j)) {
+			i = (rand() % N + prev_x + root_N) % N;
+			j = (rand() % N + prev_y + root_N) % N;
+		}
+        grid[i][j] = 0;
+        cpy_grid[i][j] = 0;
+        prev_x = i;
+		prev_y = j;
 	}
 }
 //This function clears the grid
