@@ -183,7 +183,6 @@ void generate_cells() {
 		prev_y = j;
 	}
 }
-
 //This function clears the grid
 void grid_clear() {
     for (int i = 0; i < N; i++) {
