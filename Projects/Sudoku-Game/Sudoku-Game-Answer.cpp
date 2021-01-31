@@ -39,13 +39,11 @@ void print_grid() {
 				cout << grid[i][j] << "  ";
 			}
 		}
-		cout << "|";
-		cout << '\n';
+		cout << "|\n";
         if (i % root_N == root_N - 1) {
 			for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
 			for (int i = 0; i < root_N; cout << "---", i++);
-			cout << "-";
-			cout << '\n';
+			cout << "-\n";
 		}
 	}
 }
