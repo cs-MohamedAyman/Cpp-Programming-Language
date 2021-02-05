@@ -117,7 +117,7 @@ bool check_full() {
             return false;
 	for (int i = 0; i < N-1; i++)
 		for (int j = 0; j < N-1; j++)
-            if (grid[i][j] == grid[i+1][j] || grid[i][j+1] == grid[i][j])
+            if (grid[i][j] == grid[i+1][j] || grid[i][j] == grid[i][j+1])
                 return false;
     return true;
 }
@@ -201,6 +201,12 @@ void play_game() {
         generate_cell();
         //Prints the grid
         print_grid();
+        //Check if the state of the grid has a tie state
+        if (check_full()) {
+            cout << "Woah! That's a tie!\n";
+            break;
+		}
+        //Read an input from the player
 		int i;
         cout << "Enter the direction: ";
 		cin >> i;
@@ -219,14 +225,11 @@ void play_game() {
             //Prints the grid
             print_grid();
             cout << "Congrats, You won!\n";
-            break;
-		}
-        //Check if the state of the grid has a tie state
-        if (check_full()) {
-            //Prints the grid
-            print_grid();
-            cout << "Woah! That's a tie!\n";
-            break;
+			char c;
+			cout << "Continue [Y/N] ";
+			cin >> c;
+			if (c != 'y' && c != 'Y')
+				break;
 		}
 	}
 }

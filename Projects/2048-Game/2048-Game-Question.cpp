@@ -149,6 +149,12 @@ void play_game() {
         generate_cell();
         //Prints the grid
         print_grid();
+        //Check if the state of the grid has a tie state
+        if (check_full()) {
+            cout << "Woah! That's a tie!\n";
+            break;
+		}
+        //Read an input from the player
 		int i;
         cout << "Enter the direction: ";
 		cin >> i;
@@ -167,14 +173,11 @@ void play_game() {
             //Prints the grid
             print_grid();
             cout << "Congrats, You won!\n";
-            break;
-		}
-        //Check if the state of the grid has a tie state
-        if (check_full()) {
-            //Prints the grid
-            print_grid();
-            cout << "Woah! That's a tie!\n";
-            break;
+			char c;
+			cout << "Continue [Y/N] ";
+			cin >> c;
+			if (c != 'y' && c != 'Y')
+				break;
 		}
 	}
 }
