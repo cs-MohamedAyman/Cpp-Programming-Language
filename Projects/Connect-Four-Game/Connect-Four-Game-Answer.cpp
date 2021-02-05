@@ -143,7 +143,7 @@ void play_game() {
         print_grid();
         //Set mark value based on the player
         char mark = (player == 0? 'X' : 'O');
-        //Takes input from the user to fill in the grid
+        //Read an input from the player
         cout << "Player " << mark << '\n';
         int i;
         cout << "Enter the column index: ";

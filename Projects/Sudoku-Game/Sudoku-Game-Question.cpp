@@ -138,6 +138,7 @@ void play_game() {
     while (true) {
         //Prints the grid
         print_grid();
+        //Read an input from the player
         int i, j, v;
         cout << "Enter the position and value: ";
         cin >> i >> j >> v;
