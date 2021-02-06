@@ -151,7 +151,7 @@ void play_game() {
         print_grid();
         //Check if the state of the grid has a tie state
         if (check_full()) {
-            cout << "Woah! That's a tie!\n";
+            cout << "Game Over\n";
             break;
 		}
         //Read an input from the player
