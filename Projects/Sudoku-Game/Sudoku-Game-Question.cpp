@@ -99,7 +99,7 @@ void generate_cells() {
     for (int k = 0; k < N; k+=root_N) {
 		for (int i = 0; i < root_N; i++) {
 			for (int j = 0; j < root_N; j++) {
-                int n = rand() % (N + 1) + 1;
+                int n = rand() % N + 1;
                 while (!check_valid_value(k+i, k+j, n) || check_original_cell(k+i, k+j))
 					n = rand() % N + 1;
                 grid[k+i][k+j] = n;
