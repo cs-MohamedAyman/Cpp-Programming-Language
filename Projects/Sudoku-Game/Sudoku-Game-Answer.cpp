@@ -8,8 +8,9 @@ int cpy_grid[N][N];
 
 //This function prints the grid of Sudoku Game as the game progresses
 void print_grid() {
-    int dd_len = to_string(N).size();
-    for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
+    char symbols[17] = {'.', '1', '2', '3', '4', '5', '6', '7',
+					    '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G'};
+    for (int i = 0; i < N*3; cout << "-", i++);
     for (int i = 0; i < root_N; cout << "---", i++);
     cout << "-\n";
     for (int i = 0; i < N; i++) {
@@ -17,18 +18,11 @@ void print_grid() {
 		for (int j = 0; j < N; j++) {
             if (j % root_N == 0 && j > 0)
                 cout << "|  ";
-            if (grid[i][j] == 0) {
-				for (int k = 0; k < dd_len; cout << ".", k++);
-				cout << "  ";
-			}
-            else {
-				for (int k = 0; k < dd_len - to_string(grid[i][j]).size(); cout << "0", k++);
-				cout << grid[i][j] << "  ";
-			}
+			cout << symbols[grid[i][j]] << "  ";
 		}
 		cout << "|\n";
         if (i % root_N == root_N - 1) {
-			for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
+			for (int i = 0; i < N*3; cout << "-", i++);
 			for (int i = 0; i < root_N; cout << "---", i++);
 			cout << "-\n";
 		}
@@ -38,7 +32,7 @@ void print_grid() {
 bool check_win() {
     //If row is not full with all numbers, the game is still running
     for (int i = 0; i < N; i++) {
-        int s[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int s[N+1] = {0};
 		for (int j = 0; j < N; j++) {
             s[grid[i][j]] ++;
 			if (s[grid[i][j]] != 1 || grid[i][j] == 0)
@@ -47,7 +41,7 @@ bool check_win() {
 	}
     //If column is not full with all numbers, the game is still running
     for (int i = 0; i < N; i++) {
-        int s[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int s[N+1] = {0};
 		for (int j = 0; j < N; j++) {
             s[grid[j][i]] ++;
 			if (s[grid[j][i]] != 1 || grid[j][i] == 0)
@@ -57,7 +51,7 @@ bool check_win() {
     //If box is not full with all numbers, the game is still running
     for (int i = 0; i < N; i+=root_N) {
 		for (int j = 0; j < N; j+=root_N) {
-			int s[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+			int s[N+1] = {0};
 			for (int k = i; k < i+root_N; k++) {
 				for (int w = j; w < j+root_N; w++) {
 					s[grid[k][w]] ++;
@@ -89,7 +83,7 @@ bool check_valid_value(int i, int j, int v) {
     if (v == 0)
         return true;
 	//Check invalid value
-    if (v < 0 || v > N)
+    if (v < 1 || v > N)
         return false;
 	//Check duplicate in all rows
     for (int k = 0; k < N; k++)
