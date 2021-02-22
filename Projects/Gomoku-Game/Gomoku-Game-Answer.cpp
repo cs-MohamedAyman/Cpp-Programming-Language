@@ -2,22 +2,23 @@
 using namespace std;
 
 const int N = 15;
+const int M = 15;
 const int a_row = 5;
-char grid[N][N];
+char grid[N][M];
 
 //This function prints the grid of Gomoku as the game progresses
 void print_grid() {
     cout << "Player 1: B  vs  Player 2: W\n";
     cout << "--";
-    for (int i = 0; i < N; cout << "---", i++);
+    for (int i = 0; i < M; cout << "---", i++);
     cout << "--\n";
     for (int i = 0; i < N; i++) {
         cout << "|  ";
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < M; j++)
             cout << grid[i][j] << "  ";
         cout << "|\n";
         cout << "--";
-        for (int i = 0; i < N; cout << "---", i++);
+        for (int i = 0; i < M; cout << "---", i++);
         cout << "--\n";
     }
 }
@@ -28,7 +29,7 @@ bool check_win() {
     //If row is full with same characters, 
 	//the game is over and the player with that character has won
     for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N-a_row+1; j++) {
+		for (int j = 0; j < M-a_row+1; j++) {
 			s = grid[i][j];
 			cnt = 0;
 			for (int k = j; k < j+a_row; k++)
@@ -40,7 +41,7 @@ bool check_win() {
     }
     //If column is full with same characters, 
 	//the game is over and the player with that character has won
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < M; i++) {
 		for (int j = 0; j < N-a_row+1; j++) {
 			s = grid[j][i];
 			cnt = 0;
@@ -56,8 +57,8 @@ bool check_win() {
     for (int i = 0; i < N; i++) {
         if (i+a_row-1 >= N)
             continue;
-        for (int j = 0; j < N; j++) {
-            if (j+a_row-1 >= N)
+        for (int j = 0; j < M; j++) {
+            if (j+a_row-1 >= M)
                 continue;
             s = grid[i][j];
 			cnt = 0;
@@ -74,7 +75,7 @@ bool check_win() {
     for (int i = 0; i < N; i++) {
         if (i+a_row-1 >= N)
             continue;
-        for (int j = 0; j < N; j++) {
+        for (int j = 0; j < M; j++) {
             if (j-a_row+1 < 0)
                 continue;
             s = grid[i][j];
@@ -97,7 +98,7 @@ bool check_tie(char mark) {
     int cnt;
     //If row a single type of characters
     for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N-a_row+1; j++) {
+		for (int j = 0; j < M-a_row+1; j++) {
 			s = mark;
 			cnt = 0;
 			for (int k = j; k < j+a_row; k++)
@@ -108,7 +109,7 @@ bool check_tie(char mark) {
 		}
     }
     //If column a single type of characters
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < M; i++) {
 		for (int j = 0; j < N-a_row+1; j++) {
 			s = mark;
 			cnt = 0;
@@ -123,8 +124,8 @@ bool check_tie(char mark) {
     for (int i = 0; i < N; i++) {
         if (i+a_row-1 >= N)
             continue;
-        for (int j = 0; j < N; j++) {
-            if (j+a_row-1 >= N)
+        for (int j = 0; j < M; j++) {
+            if (j+a_row-1 >= M)
                 continue;
 			s = mark;
 			cnt = 0;
@@ -140,7 +141,7 @@ bool check_tie(char mark) {
     for (int i = 0; i < N; i++) {
         if (i+a_row-1 >= N)
             continue;
-        for (int j = 0; j < N; j++) {
+        for (int j = 0; j < M; j++) {
             if (j-a_row+1 < 0)
                 continue;
 			s = mark;
@@ -163,7 +164,7 @@ bool check_empty(int i, int j) {
 }
 //This function checks if given position is valid or not 
 bool check_valid_position(int i, int j) {
-	return 0 <= i && i < N && 0 <= j && j < N;
+	return 0 <= i && i < N && 0 <= j && j < M;
 }
 //This function sets a value to a cell
 void set_cell(int i, int j, char mark) {
@@ -172,7 +173,7 @@ void set_cell(int i, int j, char mark) {
 //This function clears the grid
 void grid_clear() {
     for (int i = 0; i < N; i++)
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < M; j++)
             grid[i][j] = '.';
 }
 //MAIN FUNCTION
