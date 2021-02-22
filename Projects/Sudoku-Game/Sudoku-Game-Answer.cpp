@@ -6,7 +6,7 @@ const int root_N = sqrt(N);
 int grid[N][N];
 int cpy_grid[N][N];
 
-//This function prints the grid of 2048 Game as the game progresses
+//This function prints the grid of Sudoku Game as the game progresses
 void print_grid() {
     int dd_len = to_string(N).size();
     for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
