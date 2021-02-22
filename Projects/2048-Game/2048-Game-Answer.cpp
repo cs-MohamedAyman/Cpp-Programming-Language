@@ -1,14 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-Assigning values to the grid
-The grid will look like this:
-  0,0 | 0,1 | 0,2 | 0,3 
-  1,0 | 1,1 | 1,2 | 1,3 
-  2,0 | 2,1 | 2,2 | 2,3 
-  3,0 | 3,1 | 3,2 | 3,3 
-*/
 const int N = 4;
 const int GOAL = 1 << (3*N-1);
 int grid[N][N];
