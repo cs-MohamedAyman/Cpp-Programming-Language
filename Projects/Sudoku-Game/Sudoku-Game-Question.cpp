@@ -2,14 +2,15 @@
 using namespace std;
 
 const int N = 9;
-const int root_N = 3;
+const int root_N = sqrt(N);
 int grid[N][N];
 int cpy_grid[N][N];
 
 //This function prints the grid of Sudoku Game as the game progresses
 void print_grid() {
-    int dd_len = to_string(N).size();
-    for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
+    char symbols[17] = {'.', '1', '2', '3', '4', '5', '6', '7',
+					    '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G'};
+    for (int i = 0; i < N*3; cout << "-", i++);
     for (int i = 0; i < root_N; cout << "---", i++);
     cout << "-\n";
     for (int i = 0; i < N; i++) {
@@ -17,18 +18,11 @@ void print_grid() {
 		for (int j = 0; j < N; j++) {
             if (j % root_N == 0 && j > 0)
                 cout << "|  ";
-            if (grid[i][j] == 0) {
-				for (int k = 0; k < dd_len; cout << ".", k++);
-				cout << "  ";
-			}
-            else {
-				for (int k = 0; k < dd_len - to_string(grid[i][j]).size(); cout << "0", k++);
-				cout << grid[i][j] << "  ";
-			}
+			cout << symbols[grid[i][j]] << "  ";
 		}
 		cout << "|\n";
         if (i % root_N == root_N - 1) {
-			for (int i = 0; i < N*(dd_len+2); cout << "-", i++);
+			for (int i = 0; i < N*3; cout << "-", i++);
 			for (int i = 0; i < root_N; cout << "---", i++);
 			cout << "-\n";
 		}
