@@ -2,22 +2,23 @@
 using namespace std;
 
 const int N = 15;
+const int M = 15;
 const int a_row = 5;
-char grid[N][N];
+char grid[N][M];
 
 //This function prints the grid of Gomoku as the game progresses
 void print_grid() {
     cout << "Player 1: B  vs  Player 2: W\n";
     cout << "--";
-    for (int i = 0; i < N; cout << "---", i++);
+    for (int i = 0; i < M; cout << "---", i++);
     cout << "--\n";
     for (int i = 0; i < N; i++) {
         cout << "|  ";
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < M; j++)
             cout << grid[i][j] << "  ";
         cout << "|\n";
         cout << "--";
-        for (int i = 0; i < N; cout << "---", i++);
+        for (int i = 0; i < M; cout << "---", i++);
         cout << "--\n";
     }
 }
