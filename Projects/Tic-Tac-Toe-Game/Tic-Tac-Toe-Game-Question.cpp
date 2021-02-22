@@ -1,13 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-Assigning values to the grid
-The grid will look like this:
-  0,0 | 0,1 | 0,2
-  1,0 | 1,1 | 1,2
-  2,0 | 2,1 | 2,2
-*/
 const int N = 3;
 char grid[N][N];
 
