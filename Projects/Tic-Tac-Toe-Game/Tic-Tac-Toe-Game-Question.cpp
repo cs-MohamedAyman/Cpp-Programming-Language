@@ -84,7 +84,7 @@ void play_game() {
         int i, j;
         cout << "Enter the row index and column index: ";
         cin >> i >> j;
-        while (!check_valid_position(i, j) or !check_empty(i, j)) {
+        while (!check_valid_position(i, j) || !check_empty(i, j)) {
             cout << "Enter a valid row index and a valid column index: ";
             cin >> i >> j;
         }
