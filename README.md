@@ -60,3 +60,7 @@ Cpp programming language lectures for computer science students.
 * C++ by Saurabh Shukla Sir - C++ by Saurabh Shukla
 * LearningLad - Learn C++ Programming
 * Simple Snippets - C++ Programming Tutorials for Beginners & IT students
+
+<img align="right" width="120" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
+
+## Educational-Projects
