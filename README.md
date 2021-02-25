@@ -62,10 +62,9 @@ Cpp programming language lectures for computer science students.
 * Simple Snippets - C++ Programming Tutorials for Beginners & IT students
 
 <img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
-<br>
 
 ## Educational-Projects
-<br>
+<br><br>
 
 ### Project 1:
 ### Project 2:
