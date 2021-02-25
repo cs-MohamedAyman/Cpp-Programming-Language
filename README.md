@@ -64,3 +64,12 @@ Cpp programming language lectures for computer science students.
 <img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
 
 ## Educational-Projects
+
+### Project 1:
+### Project 2:
+### Project 3:
+### Project 4:
+### Project 5:
+### Project 6:
+### Project 7:
+### Project 8:
