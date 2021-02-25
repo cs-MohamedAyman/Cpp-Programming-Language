@@ -61,6 +61,6 @@ Cpp programming language lectures for computer science students.
 * LearningLad - Learn C++ Programming
 * Simple Snippets - C++ Programming Tutorials for Beginners & IT students
 
-<img align="right" width="120" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
+<img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
 
 ## Educational-Projects
