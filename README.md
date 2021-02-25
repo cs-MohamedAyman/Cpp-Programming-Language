@@ -5,6 +5,7 @@ Cpp programming language lectures for computer science students.
 
 <img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice1.jpg">
 <br><br>
+
 ## `Part 1:` C++ Basics and Arrays `30H`
 
 ## Lecture 01 - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-01-Overview)
@@ -16,6 +17,7 @@ Cpp programming language lectures for computer science students.
 
 <img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice1.jpg">
 <br><br>
+
 ## `Part 2:` C++ Pointers and Functions `30H`
 
 ## Lecture 07 - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
