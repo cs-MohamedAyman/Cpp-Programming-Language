@@ -28,6 +28,7 @@ Cpp programming language lectures for computer science students.
 ### Lecture 12 - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
 
 <img align="right" width="120" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
+<br>
 
 ## `Assignments`
 
