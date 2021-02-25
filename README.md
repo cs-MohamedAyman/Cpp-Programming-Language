@@ -30,7 +30,7 @@ Cpp programming language lectures for computer science students.
 <img align="right" width="160" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
 <br>
 
-## Assignments
+## `Assignments`
 
 ### Assignment 1:
 ### Assignment 2:
@@ -41,10 +41,10 @@ Cpp programming language lectures for computer science students.
 ### Assignment 7:
 ### Assignment 8:
 
-<img align="right" width="210" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
+<img align="right" width="200" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
 <br>
 
-## Educational-Projects
+## `Educational-Projects`
 
 ### Project 1:
 ### Project 2:
