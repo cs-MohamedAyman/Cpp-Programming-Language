@@ -27,7 +27,7 @@ Cpp programming language lectures for computer science students.
 ## Lecture 11 - [Enumerations and Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-11-Enumerations-and-Unions)
 ## Lecture 12 - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
 
-<img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
+<img align="right" width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
 <br><br>
 
 ## Assignments
@@ -41,7 +41,7 @@ Cpp programming language lectures for computer science students.
 ### Assignment 7:
 ### Assignment 8:
 
-<img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
+<img align="right" width="280" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
 <br><br>
 
 ## Educational-Projects
