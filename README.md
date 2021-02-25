@@ -48,14 +48,14 @@ Cpp programming language lectures for computer science students.
 
 ## `Educational-Projects` `80H`
 
-### `Project 1` -
-### `Project 2` -
-### `Project 3` -
-### `Project 4` -
-### `Project 5` -
-### `Project 6` -
-### `Project 7` -
-### `Project 8` -
+### `Project 01` -
+### `Project 02` -
+### `Project 03` -
+### `Project 04` -
+### `Project 05` -
+### `Project 06` -
+### `Project 07` -
+### `Project 08` -
 
 <br>
 <img align="right" width="80" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/textbooks.jpg">
