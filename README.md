@@ -27,6 +27,25 @@ Cpp programming language lectures for computer science students.
 ## Lecture 11 - [Enumerations and Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-11-Enumerations-and-Unions)
 ## Lecture 12 - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
 
+<img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
+<br><br>
+
+## Assignments
+
+<img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
+<br><br>
+
+## Educational-Projects
+
+### Project 1:
+### Project 2:
+### Project 3:
+### Project 4:
+### Project 5:
+### Project 6:
+### Project 7:
+### Project 8:
+
 <img align="right" width="80" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/textbooks.jpg">
 
 ## Textbooks
@@ -66,17 +85,3 @@ Cpp programming language lectures for computer science students.
 * C++ by Saurabh Shukla Sir - C++ by Saurabh Shukla
 * LearningLad - Learn C++ Programming
 * Simple Snippets - C++ Programming Tutorials for Beginners & IT students
-
-<img align="right" width="240" height="240" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
-<br><br>
-
-## Educational-Projects
-
-### Project 1:
-### Project 2:
-### Project 3:
-### Project 4:
-### Project 5:
-### Project 6:
-### Project 7:
-### Project 8:
