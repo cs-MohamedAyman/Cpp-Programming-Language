@@ -4,7 +4,7 @@
 Cpp programming language lectures for computer science students.
 
 <img align="right" width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice1.jpg">
-<br><br>
+<br>
 
 ## `Part 1:` C++ Basics and Arrays `30H`
 
@@ -16,7 +16,7 @@ Cpp programming language lectures for computer science students.
 ## Lecture 06 - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-06-Arrays)
 
 <img align="right" width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice1.jpg">
-<br><br>
+<br>
 
 ## `Part 2:` C++ Pointers and Functions `30H`
 
@@ -28,7 +28,7 @@ Cpp programming language lectures for computer science students.
 ## Lecture 12 - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
 
 <img align="right" width="160" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
-<br><br>
+<br>
 
 ## Assignments
 
@@ -41,8 +41,8 @@ Cpp programming language lectures for computer science students.
 ### Assignment 7:
 ### Assignment 8:
 
-<img align="right" width="160" height="210" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
-<br><br>
+<img align="right" width="210" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
+<br>
 
 ## Educational-Projects
 
