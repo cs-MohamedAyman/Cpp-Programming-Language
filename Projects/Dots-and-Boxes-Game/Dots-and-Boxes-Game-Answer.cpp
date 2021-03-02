@@ -13,9 +13,9 @@ bool vertical_grid[N][M+1];
 //This function prints the grid of Dots-and-Boxes as the game progresses
 void print_grid() {
 	for (int i = 0; i< n_players; i++) {
-        cout << "Player " << i+1 << ": " << marks[i] << " ";
+        cout << "Player " << i+1 << ": " << marks[i] << "  ";
         if (i < n_players-1)
-            cout << "vs ";
+            cout << "vs  ";
 	}
 	cout << "\n";
 	cout << "--";
