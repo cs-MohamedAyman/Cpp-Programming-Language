@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 9;
-const int root_N = sqrt(N);
+const int root_N = 3;
+const int N = root_N * root_N;
 int grid[N][N];
 int cpy_grid[N][N];
 
@@ -28,9 +28,9 @@ void print_grid() {
 		}
 	}
 }
-//This function checks if all rows and columns and boxes is full with all numbers
+//This function checks if the game has a win state or not
 bool check_win() {
-    //If row is not full with all numbers, the game is still running
+    //Check if all rows are not full, the game is still running
     for (int i = 0; i < N; i++) {
         int s[N+1] = {0};
 		for (int j = 0; j < N; j++) {
@@ -39,7 +39,7 @@ bool check_win() {
 				return false;
 		}
 	}
-    //If column is not full with all numbers, the game is still running
+    //Check if all columns are not full, the game is still running
     for (int i = 0; i < N; i++) {
         int s[N+1] = {0};
 		for (int j = 0; j < N; j++) {
@@ -48,7 +48,7 @@ bool check_win() {
 				return false;
 		}
 	}
-    //If box is not full with all numbers, the game is still running
+    //Check if all boxes are not full, the game is still running
     for (int i = 0; i < N; i+=root_N) {
 		for (int j = 0; j < N; j+=root_N) {
 			int s[N+1] = {0};
@@ -65,19 +65,19 @@ bool check_win() {
     //if all cases above not reached		
     return true;
 }
-//This function checks if given position is valid or not 
+//This function checks if the given position is valid or not 
 bool check_valid_position(int i, int j) {
     return 0 <= i && i < N && 0 <= j && j < N;
 }
-//This function checks if given cell is empty or not 
+//This function checks if the given cell is empty or not 
 bool check_empty_cell(int i, int j) {
     return grid[i][j] == 0;
 }
-//This function checks if given cell is original or not
+//This function checks if the given cell is original or not
 bool check_original_cell(int i, int j) {
     return cpy_grid[i][j] != 0;
 }
-//This function checks if the given cell is valid with the given numbers
+//This function checks if the given value is valid with the given cell
 bool check_valid_value(int i, int j, int v) {
 	//Check delete case
     if (v == 0)
@@ -104,11 +104,11 @@ bool check_valid_value(int i, int j, int v) {
     //if all cases above not reached		
     return true;
 }
-//This function sets a value to a cell
+//This function sets the given value to the given cell
 void set_cell(int i, int j, int v) {
 	grid[i][j] = v;
 }
-//This function solve the grid
+//This function solves the grid
 bool solve_grid(int i, int j) {
     if (j == N) {
         i += 1;
@@ -161,7 +161,7 @@ void generate_cells() {
 		prev_y = j;
 	}
 }
-//This function clears the grid
+//This function clears the game structures
 void grid_clear() {
     for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
@@ -170,8 +170,15 @@ void grid_clear() {
 		}
 	}
 }
-
-
+//This function reads a valid position and value inputs
+void read_input(int &i, int &j, int &v) {
+	cout << "Enter the row index and column index and value: ";
+	cin >> i >> j >> v;
+    while (!check_valid_position(i, j) || !check_valid_value(i, j, v) || check_original_cell(i, j)) {
+		cout << "Enter a valid row index and column index and value: ";
+		cin >> i >> j >> v;
+	}
+}
 //MAIN FUNCTION
 void play_game() {
     cout << "Sudoku Game!\n";
@@ -181,19 +188,15 @@ void play_game() {
         //Prints the grid
         print_grid();
         //Read an input from the player
-        int i, j, v;
-        cout << "Enter the position and value: ";
-        cin >> i >> j >> v;
-        while (!check_valid_position(i, j) || !check_valid_value(i, j, v) || check_original_cell(i, j)) {
-            cout << "Enter a valid position and value: ";
-            cin >> i >> j >> v;
-        }
+		int i, j, v;
+        read_input(i, j, v);
         //Set the input position with the value
         set_cell(i, j, v);
-        //Check if the state of the grid has a win state
+        //Check if the grid has a win state
         if (check_win()) {
             //Prints the grid
             print_grid();
+			//Announcement of the final statement
             cout << "Congrats, You won!\n";
             break;
 		}
