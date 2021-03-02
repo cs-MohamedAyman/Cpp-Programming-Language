@@ -7,9 +7,8 @@ int grid[N][N];
 
 //This function prints the grid of 2048 Game as the game progresses
 void print_grid() {
-	for (int i = 0; i < N; cout << "-", i++);
-	for (int i = 0; i < (N+4) * N; cout << "-", i++);
-	cout << "-\n";
+	for (int i = 0; i < ((N + 4) * N + N + 1); cout << "-", i++);
+	cout << "\n";
 	for (int i = 0; i < N; i++) {
         cout << "|";
 		for (int j = 0; j < N; j++) {
@@ -28,9 +27,8 @@ void print_grid() {
 			cout << e << "|";
 		}
 		cout << "\n";
-		for (int t = 0; t < N; cout << "-", t++);
-		for (int t = 0; t < (N+4) * N; cout << "-", t++);
-		cout << "-\n";
+		for (int t = 0; t < ((N + 4) * N + N + 1); cout << "-", t++);
+		cout << "\n";
 	}
 }
 //This function generates a cell with value 2 
@@ -43,7 +41,7 @@ void generate_cell() {
 	}
     grid[a][b] = 2;
 }
-//This function rotates the grid by 90 degree
+//This function rotates the grid by 90 degree anti-clockwise
 void rotate_90() {
 	for (int i = 0; i < N/2; i++) {
 		for (int j = i; j < N-i-1; j++) {
@@ -59,11 +57,11 @@ void rotate_90() {
 bool check_win() {
 
 }
-//This function checks if the direction have state reachs 2048 or not 
+//This function checks if the current right direction has a movement state or not
 bool check_available_direction() {
 
 }
-//This function checks if any direction have state reachs 2048 or not
+//This function checks if the given direction has a movement state or not
 bool check_available_move(int d) {
     bool res = false;
     //check direction right
@@ -80,15 +78,15 @@ bool check_available_move(int d) {
     rotate_90();
     return res;
 }
-//This function checks if the game state over or not
+//This function checks if the game has a full state or not
 bool check_full() {
 
 }
-//This function merges the grid with given direction 
+//This function merges the grid with the right direction 
 void merge() {
 
 }
-//This function checks if the direction have state reachs 2048 or not 
+//This function merges the grid with the given direction 
 void merge_direction(int d) {
     //merge direction right
     if (d == 3) merge();
@@ -103,11 +101,11 @@ void merge_direction(int d) {
     if (d == 2) merge();
     rotate_90();
 }
-//This function moves the grid with given direction 
+//This function moves the grid with the left direction 
 void move() {
 
 }
-//This function checks if the direction have state reachs 2048 or not 
+//This function moves the grid with the given direction 
 void move_direction(int d) {
     //move direction left
     if (d == 1) move();
@@ -122,18 +120,21 @@ void move_direction(int d) {
     if (d == 5) move();
     rotate_90();
 }
-//This function checks if given position is valid or not 
+//This function checks if the given direction is valid or not 
 bool check_valid_direction(int i) {
 
 }
-//This function clears the grid
+//This function clears the game structures
 void grid_clear() {
 
 }
+//This function reads a valid direction
+void read_input(int &i) {
 
+}
 //MAIN FUNCTION
 void play_game() {
-    cout << GOAL << " Game!\n";
+    cout << "2048 Game!\n";
     cout << "Welcome...\n";
     cout << "============================\n";
     while (true) {
@@ -148,23 +149,20 @@ void play_game() {
 		}
         //Read an input from the player
 		int i;
-        cout << "Enter the direction: ";
-		cin >> i;
-        while (!check_valid_direction(i) || !check_available_move(i)) {
-            cout << "Enter a valid direction: ";
-			cin >> i;
-		}
+		read_input(i);
         //Move with the input direction
         move_direction(i);
         //Merge with the input direction
         merge_direction(i);
         //Move with the input direction
         move_direction(i);
-        //Check if the state of the grid has a win state
+        //Check if the grid has a win state
         if (check_win()) {
             //Prints the grid
             print_grid();
+            //Announcement of the final statement
             cout << "Congrats, You won!\n";
+            //Ask for continuing the game
 			char c;
 			cout << "Continue [Y/N] ";
 			cin >> c;
