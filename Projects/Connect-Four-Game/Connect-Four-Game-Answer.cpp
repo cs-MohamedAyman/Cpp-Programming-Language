@@ -3,12 +3,19 @@ using namespace std;
 
 const int N = 6;
 const int M = 7;
+const int n_players = 2;
+char marks[n_players] = {'X', 'O'};
 char grid[N][M];
 
 //This function prints the grid of Connect Four Game as the game progresses
 void print_grid() {
-    cout << "Player 1: X  vs  Player 2: O\n";
-    cout << "--";
+	for (int i = 0; i< n_players; i++) {
+        cout << "Player " << i+1 << ": " << marks[i] << "  ";
+        if (i < n_players-1)
+            cout << "vs  ";
+	}
+	cout << "\n";
+	cout << "--";
     for (int i = 0; i < M; cout << "---", i++);
     cout << "--\n";
     for (int i = 0; i < N; i++) {
@@ -21,10 +28,10 @@ void print_grid() {
         cout << "--\n";
     }
 }
-//This function checks if row or column or diagonal is full with same characters
+//This function checks if the game has a win state or not
 bool check_win() {
     char s;
-    //If row is full with same characters, 
+    //Check if there is an accepted row
 	//the game is over and the player with that character has won
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M-3; j++) {
@@ -33,8 +40,8 @@ bool check_win() {
                 return true;
         }
     }
-	//If column is full with same characters, 
-	//the game is over and the player with that character has won
+    //Check if there is an accepted column
+    //the game is over and the player with that character has won
     for (int j = 0; j < N-3; j++) {
         for (int i = 0; i < M; i++) {
             s = grid[j][i];
@@ -42,8 +49,8 @@ bool check_win() {
                 return true;
         }
     }
-    //If diagonal is full with same characters, 
-	//the game is over and the player with that character has won
+    //Check if there is an accepted left diagonal
+    //the game is over and the player with that character has won
     for (int i = 0; i < N-3; i++) {
         for (int j = 0; j < M-3; j++) {
             s = grid[i][j];
@@ -51,8 +58,8 @@ bool check_win() {
                 return true;
         }
     }
-    //If diagonal is full with same characters, 
-	//the game is over and the player with that character has won
+    //Check if there is an accepted right diagonal
+    //the game is over and the player with that character has won
     for (int i = 0; i < N-3; i++) {
         for (int j = 3; j < M; j++) {
             s = grid[i][j];
@@ -64,33 +71,45 @@ bool check_win() {
     //if all cases above not reached
     return false;
 }
-//This function checks if row or column or diagonal is full with same characters
+//This function checks if the game has a tie state or not
 bool check_tie(char mark) {
-    //If row a single type of characters
+    //Check if there is an accpted row
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M-3; j++) {
-            if (grid[i][j] == mark || grid[i][j+1] == mark || grid[i][j+2] == mark || grid[i][j+3] == mark)
+            if ((grid[i][j]   == mark || grid[i][j]   == '.') &&
+				(grid[i][j+1] == mark || grid[i][j+1] == '.') && 
+				(grid[i][j+2] == mark || grid[i][j+2] == '.') && 
+				(grid[i][j+3] == mark || grid[i][j+3] == '.'))
                 return false;
         }
     }
-    //If column a single type of characters
+    //Check if there is an accpted column
     for (int i = 0; i < N-3; i++) {
         for (int j = 0; j < M; j++) {
-            if (grid[j][i] == mark || grid[j+1][i] == mark || grid[j+2][i] == mark || grid[j+3][i] == mark)
+            if ((grid[j][i]   == mark || grid[j][i]   == '.') &&
+				(grid[j+1][i] == mark || grid[j+1][i] == '.') && 
+				(grid[j+2][i] == mark || grid[j+2][i] == '.') && 
+				(grid[j+3][i] == mark || grid[j+3][i] == '.'))
                 return false;
         }
     }
-    //If diagonal a single type of characters
+    //Check if there is an accpted left diagonal
     for (int i = 0; i < N-3; i++) {
         for (int j = 0; j < M-3; j++) {
-            if (grid[i][j] == mark || grid[i+1][j+1] == mark || grid[i+2][j+2] == mark || grid[i+3][j+3] == mark)
+            if ((grid[i][j]     == mark || grid[i][j]     == '.') &&
+				(grid[i+1][j+1] == mark || grid[i+1][j+1] == '.') && 
+				(grid[i+2][j+2] == mark || grid[i+2][j+2] == '.') && 
+				(grid[i+3][j+3] == mark || grid[i+3][j+3] == '.'))
                 return false;
         }
     }
-    //If diagonal a single type of characters
+    //Check if there is an accpted right diagonal
     for (int i = 0; i < N-3; i++) {
         for (int j = 3; j < M; j++) {
-            if (grid[i][j] == mark || grid[i+1][j-1] == mark || grid[i+2][j-2] == mark || grid[i+3][j-3] == mark)
+            if ((grid[i][j]     == mark || grid[i][j]     == '.') &&
+				(grid[i+1][j-1] == mark || grid[i+1][j-1] == '.') && 
+				(grid[i+2][j-2] == mark || grid[i+2][j-2] == '.') && 
+				(grid[i+3][j-3] == mark || grid[i+3][j-3] == '.'))
                 return false;
         }
     }
@@ -106,7 +125,7 @@ bool check_empty(int i) {
 bool check_valid_column(int i) {
 	return 0 <= i && i < M;
 }
-//This function sets a value to a cell
+//This function sets the given mark to the given column
 void set_cell(int i, char mark) {
     for (int j = N-1; j > -1; j--) {
 		if (grid[j][i] == '.') {
@@ -115,51 +134,54 @@ void set_cell(int i, char mark) {
 		}
     }
 }
-//This function clears the grid
+//This function clears the game structures
 void grid_clear() {
     for (int i = 0; i < N; i++)
         for (int j = 0; j < M; j++)
             grid[i][j] = '.';
 }
-
+//This function reads a valid position input
+void read_input(int &i) {
+    cout << "Enter the column index: ";
+    cin >> i;
+    while (!check_valid_column(i) || !check_empty(i)) {
+        cout << "Enter a valid column index: ";
+        cin >> i;
+    }
+}
 //MAIN FUNCTION
 void play_game() {
     cout << "Connect Four Game!\n";
     cout << "Welcome...\n";
     cout << "============================\n";
-    bool player = 0;
+    int player = 0;
     while (true) {
         //Prints the grid
         print_grid();
-        //Set mark value based on the player
-        char mark = (player == 0? 'X' : 'O');
         //Read an input from the player
-        cout << "Player " << mark << '\n';
+        cout << "Player " << marks[player] << " is playing now\n";
         int i;
-        cout << "Enter the column index: ";
-        cin >> i;
-        while (!check_valid_column(i) || !check_empty(i)) {
-            cout << "Enter a valid column index: ";
-            cin >> i;
-        }
+		read_input(i);
         //Set the input position with the mark
-        set_cell(i, mark);
+        set_cell(i, marks[player]);
         //Check if the state of the grid has a win state
         if (check_win()) {
             //Prints the grid
             print_grid();
-            cout << "Congrats, Player " << mark << " is won!\n";
+            //Announcement of the final statement
+            cout << "Congrats, Player " << marks[player] << " is won!\n";
             break;
         }
         //Check if the state of the grid has a tie state
-        if (check_tie(mark)) {
+        if (check_tie(marks[player])) {
             //Prints the grid
             print_grid();
+            //Announcement of the final statement
             cout << "Woah! That's a tie!\n";
             break;
         }
         //Player number changes after each turn
-        player = 1 - player;
+        player = (player + 1) % n_players;
     }
 }
 int main() {
