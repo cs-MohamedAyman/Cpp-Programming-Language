@@ -5,7 +5,7 @@ const int N = 3;
 const char marks[2] = {'X', 'O'};
 char grid[N][N];
 
-//This function prints the grid of Tic-Tac-Toe as the game progresses
+//This function prints the grid of Tic-Tac-Toe Game as the game progresses
 void print_grid() {
     cout << "Player 1: " << marks[0] << "  vs  Player 2: " << marks[1] << "\n";
     cout << "--";
