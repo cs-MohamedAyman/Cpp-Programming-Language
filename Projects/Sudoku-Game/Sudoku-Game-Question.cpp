@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 9;
-const int root_N = sqrt(N);
+const int root_N = 3;
+const int N = root_N * root_N;
 int grid[N][N];
 int cpy_grid[N][N];
 
@@ -28,31 +28,31 @@ void print_grid() {
 		}
 	}
 }
-//This function checks if all rows and columns and boxes is full with all numbers
+//This function checks if the game has a win state or not
 bool check_win() {
 
 }
-//This function checks if given position is valid or not 
+//This function checks if the given position is valid or not 
 bool check_valid_position(int i, int j) {
 
 }
-//This function checks if given cell is empty or not 
+//This function checks if the given cell is empty or not 
 bool check_empty_cell(int i, int j) {
 
 }
-//This function checks if given cell is original or not
+//This function checks if the given cell is original or not
 bool check_original_cell(int i, int j) {
 
 }
-//This function checks if the given cell is valid with the given numbers
+//This function checks if the given value is valid with the given cell
 bool check_valid_value(int i, int j, int v) {
 
 }
-//This function sets a value to a cell
+//This function sets the given value to the given cell
 void set_cell(int i, int j, int v) {
 
 }
-//This function solve the grid
+//This function solves the grid
 bool solve_grid(int i, int j) {
     if (j == N) {
         i += 1;
@@ -105,12 +105,14 @@ void generate_cells() {
 		prev_y = j;
 	}
 }
-//This function clears the grid
+//This function clears the game structures
 void grid_clear() {
 
 }
+//This function reads a valid position and value inputs
+void read_input(int &i, int &j, int &v) {
 
-
+}
 //MAIN FUNCTION
 void play_game() {
     cout << "Sudoku Game!\n";
@@ -120,19 +122,15 @@ void play_game() {
         //Prints the grid
         print_grid();
         //Read an input from the player
-        int i, j, v;
-        cout << "Enter the position and value: ";
-        cin >> i >> j >> v;
-        while (!check_valid_position(i, j) || !check_valid_value(i, j, v) || check_original_cell(i, j)) {
-            cout << "Enter a valid position and value: ";
-            cin >> i >> j >> v;
-        }
+		int i, j, v;
+        read_input(i, j, v);
         //Set the input position with the value
         set_cell(i, j, v);
-        //Check if the state of the grid has a win state
+        //Check if the grid has a win state
         if (check_win()) {
             //Prints the grid
             print_grid();
+			//Announcement of the final statement
             cout << "Congrats, You won!\n";
             break;
 		}
