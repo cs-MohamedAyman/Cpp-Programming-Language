@@ -113,7 +113,7 @@ bool check_tie(char mark) {
                 return false;
         }
     }
-    //Otherwise, there isn't a win state in the game, 
+    //Otherwise, there isn't a tie state in the game, 
     //if all cases above not reached
     return true;
 }
