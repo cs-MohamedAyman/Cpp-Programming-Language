@@ -8,22 +8,22 @@
 </details>
 
 <details>
-	<summary>8.2- Calling a Function</summary>
+	<summary>8.2- Function Calls and Return Statement</summary>
 
 </details>
 
 <details>
-	<summary>8.3- Return Statement</summary>
+	<summary>8.3- Passing by Reference and Value</summary>
 
 </details>
 
 <details>
-	<summary>8.4- Passing by Reference and Value</summary>
+	<summary>8.4- Function Arguments</summary>
 
 </details>
 
 <details>
-	<summary>8.5- Function Arguments</summary>
+	<summary>8.5- Higher Order Functions</summary>
 
 </details>
 
@@ -41,4 +41,3 @@
 	<summary>8.8- Global and Local Variables</summary>
 
 </details>
-
