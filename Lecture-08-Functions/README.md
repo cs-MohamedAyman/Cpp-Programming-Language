@@ -28,7 +28,7 @@
 </details>
 
 <details>
-	<summary>8.6- Anonymous Function</summary>
+	<summary>8.6- Anonymous Functions</summary>
 
 </details>
 
