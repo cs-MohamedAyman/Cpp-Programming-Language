@@ -5,6 +5,8 @@ const int N = 10;
 const int M = 10;
 const int n_players = 2;
 const int n_components = 6;
+char marks[n_players] = {'X', 'O'};
+int max_cell_width = max(8, n_players * 2 + 2);
 char ladder_symbol = 'L';
 char snake_symbol = 'S';
 char grid[N][M];
@@ -22,51 +24,57 @@ void convert_position_to_indices(int p, int &i, int &j) {
 }
 //This function prints the grid of Snakes and Ladders as the game progresses
 void print_grid() {
-    cout << "Player 1: X  vs  Player 2: O\n";
-	for (int i = 0; i < M; cout << "-------", i++);
+	for (int i = 0; i< n_players; i++) {
+        cout << "Player " << i+1 << ": " << marks[i] << "  ";
+        if (i < n_players-1)
+            cout << "vs  ";
+	}
+	cout << "\n";
+	for (int i = 0; i < max_cell_width * M; cout << "-", i++);
 	cout << "-\n";
 	for (int i = 0; i < N; i++) {
-		string row_res = "";
-        row_res += "|";
+        cout << "|";
 		for (int j = 0; j < M; j++) {
-            int p1, p2;
-			convert_position_to_indices(player_position[0], p1, p2);
-            row_res += (p1 == i && p2 == j)? "X  " : "   ";
+            string cell = "", symbol = "";
 			int p;
             convert_indices_to_position(i, j, p);
-            row_res += (p < 10? "  " + to_string(p) : p < 100? " " + to_string(p) : to_string(p));
-            row_res += "|";
+			for (int k = 0; k < n_components; k++) {
+                if (p == ladders[k][0] || p == ladders[k][1]) {
+                    symbol = ladder_symbol+to_string(k+1);
+                    break;
+				}
+                if (p == snakes[k][0] || p == snakes[k][1]) {
+                    symbol = snake_symbol+to_string(k+1);
+                    break;
+				}
+			}
+			cell += symbol;
+			for (int k = 0; k < 2 - symbol.size(); cell += " ", k++);
+			for (int k = 0; k < max_cell_width - 2 - 3 - 1; cell += " ", k++);
+			for (int k = 0; k < 3 - to_string(p).size(); cell += " ", k++);
+			cell += to_string(p);
+			cout << cell << "|";
 		}
-        row_res += "\n|";
+		cout << "\n";
+        cout << "|";
 		for (int j = 0; j < M; j++) {
-            string symbol = "  ";
-            int p;
-			convert_indices_to_position(i, j, p);
-            if (grid[i][j] == ladder_symbol)
-				for (int k = 0; k < n_components; k++)
-                    if (p == ladders[k][0] || p == ladders[k][1]) {
-                        symbol = ladder_symbol+to_string(k+1);
-                        break;
-					}
-            if (grid[i][j] == snake_symbol)
-				for (int k = 0; k < n_components; k++)
-                    if (p == snakes[k][0] || p == snakes[k][1]) {
-                        symbol = snake_symbol+to_string(k+1);
-                        break;
-					}
-            row_res += symbol + " ";
-            int p1, p2;
-			convert_position_to_indices(player_position[1], p1, p2);
-            row_res += (p1 == i && p2 == j? "  O" : "   ");
-            row_res += "|";
+            string cell = "";
+			for (int k = 0; k < n_players; k++) {
+				int p1, p2;
+				convert_position_to_indices(player_position[k], p1, p2);
+				if (p1 == i && p2 == j) cell += " ", cell += marks[k];
+			}
+			int t = cell.size();
+			for (int k = 0; k < max_cell_width - 1 - t; cell += " ", k++);
+			cout << cell << "|";
 		}
-		cout << row_res << '\n';
-		for (int j = 0; j < M; cout << "-------", j++);
+		cout << "\n";
+		for (int j = 0; j < max_cell_width * M; cout << "-", j++);
 		cout << "-\n";
 	}
-    cout << "Player X in " << player_position[0] << '\n';
-    cout << "Player O in " << player_position[1] << '\n';
-	for (int i = 0; i < M; cout << "-------", i++);
+	for (int i = 0; i < n_players; i++)
+        cout << "Player " << marks[i] << " in "<< player_position[i] << '\n';
+	for (int i = 0; i < max_cell_width * M; cout << "-", i++);
 	cout << "-\n";
 }
 //This function checks if the given player reach the end of the game or not 
@@ -174,32 +182,27 @@ int get_ladder_plus_value(int p) {
 int get_snake_minus_value(int p) {
 
 }
-//This function clears the grid
+//This function clears the game structures
 void grid_clear() {
 
 }
+//This function reads a valid input
+void read_input(char &i) {
 
-
+}
 //MAIN FUNCTION
 void play_game() {
     cout << "Snakes and Ladders Game!\n";
     cout << "Welcome...\n";
     cout << "============================\n";
-    bool player = 0;
+    int player = 0;
     while (true) {
         //Prints the grid
         print_grid();
-        //Set mark value based on the player
-        char mark = (player == 0? 'X' : 'O');
-        //Read an input from the player
-        cout << "Player " << mark << '\n';
-        char i;
-        cout << "Choose the dice face [A B C D E F]: ";
-        cin >> i;
-        while (!check_valid_face(i)) {
-            cout << "Choose a valid dice face [A B C D E F]: ";
-            cin >> i;
-        }
+        //Read an input dice face from the player
+        cout << "Player " << marks[player] << " is playing now\n";
+		char i;
+        read_input(i);
         //Generate a dice face
         int dice_face = generate_dice_face();
         cout << print_dice_face(dice_face) << '\n';
@@ -210,7 +213,7 @@ void play_game() {
         if (plus_value > 0) {
             //Prints the grid
             print_grid();
-            cout << "Player " << mark << " face a ladder, there is a movement from " << 
+            cout << "Player " << marks[player] << " face a ladder, there is a movement from " << 
 				    player_position[player] << " to " << player_position[player]+plus_value << '\n';
 			//Move the player position
             move_player(player, plus_value);
@@ -220,7 +223,7 @@ void play_game() {
         if (minus_value < 0) {
             //Prints the grid
             print_grid();
-            cout << "Player " << mark << " face a snake, there is a movement from " << 
+            cout << "Player " << marks[player] << " face a snake, there is a movement from " << 
 				    player_position[player] << " to " << player_position[player]+minus_value << '\n';
             //Move the player position
             move_player(player, minus_value);
@@ -229,11 +232,11 @@ void play_game() {
         if (check_win(player)) {
             //Prints the grid
             print_grid();
-            cout << "Congrats, Player " << mark << " is won!\n";
+            cout << "Congrats, Player " << marks[player] << " is won!\n";
             break;
 		}
         //Player number changes after each turn
-        player = 1 - player;
+        player = (player + 1) % n_players;
     }
 }
 int main() {
