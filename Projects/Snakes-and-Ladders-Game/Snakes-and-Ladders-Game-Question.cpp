@@ -174,12 +174,8 @@ void generate_snakes_and_ladders(char symbol) {
 		}
 	}
 }
-//This function gets the plus value of the given position
-int get_ladder_plus_value(int p) {
-
-}    
-//This function gets the minus value of the given position
-int get_snake_minus_value(int p) {
+//This function gets the movement value of the given position
+int get_entity_value(int p) {
 
 }
 //This function clears the game structures
@@ -208,25 +204,23 @@ void play_game() {
         cout << print_dice_face(dice_face) << '\n';
         //Move the player position
         move_player(player, dice_face);
-        //Get the plus value if there is a ladder
-        int plus_value = get_ladder_plus_value(player_position[player]);
-        if (plus_value > 0) {
+        //Get the movement value if there is an entity
+        int entity_value = get_entity_value(player_position[player]);
+        if (entity_value > 0) {
             //Prints the grid
             print_grid();
             cout << "Player " << marks[player] << " face a ladder, there is a movement from " << 
-				    player_position[player] << " to " << player_position[player]+plus_value << '\n';
+				    player_position[player] << " to " << player_position[player]+entity_value << '\n';
 			//Move the player position
-            move_player(player, plus_value);
+            move_player(player, entity_value);
 		}
-        //Get the minus value if there is a snake
-        int minus_value = get_snake_minus_value(player_position[player]);
-        if (minus_value < 0) {
+        if (entity_value < 0) {
             //Prints the grid
             print_grid();
             cout << "Player " << marks[player] << " face a snake, there is a movement from " << 
-				    player_position[player] << " to " << player_position[player]+minus_value << '\n';
+				    player_position[player] << " to " << player_position[player]+entity_value << '\n';
             //Move the player position
-            move_player(player, minus_value);
+            move_player(player, entity_value);
 		}
         //Check if the state of the grid has a win state
         if (check_win(player)) {
