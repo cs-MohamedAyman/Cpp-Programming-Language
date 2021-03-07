@@ -73,7 +73,7 @@ void play_game() {
             break;
         }
         //Check if the grid has a tie state
-        if (check_tie(marks[player])) {
+        if (check_tie(marks[player]) and check_tie(marks[1 - player])) {
             //Prints the grid
             print_grid();
 			//Announcement of the final statement
