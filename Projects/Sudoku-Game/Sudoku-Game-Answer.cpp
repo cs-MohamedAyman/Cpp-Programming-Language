@@ -5,11 +5,11 @@ const int root_N = 3;
 const int N = root_N * root_N;
 int grid[N][N];
 int cpy_grid[N][N];
+const char symbols[17] = {'.', '1', '2', '3', '4', '5', '6', '7',
+						  '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G'};
 
 //This function prints the grid of Sudoku Game as the game progresses
 void print_grid() {
-    char symbols[17] = {'.', '1', '2', '3', '4', '5', '6', '7',
-					    '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G'};
     for (int i = 0; i < N*3; cout << "-", i++);
     for (int i = 0; i < root_N; cout << "---", i++);
     cout << "-\n";
