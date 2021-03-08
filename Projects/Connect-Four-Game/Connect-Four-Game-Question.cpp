@@ -80,7 +80,11 @@ void play_game() {
             break;
         }
         //Check if the state of the grid has a tie state
-        if (check_tie(marks[player])) {
+        bool all_tie = true;
+        for (int i = 0; i < n_players; i++)
+            if (!check_tie(marks[i]))
+                all_tie = false;
+        if (all_tie) {
             //Prints the grid
             print_grid();
             //Announcement of the final statement
