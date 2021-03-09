@@ -33,8 +33,12 @@ void print_grid() {
 bool check_win() {
 
 }
-//This function checks if row or column or diagonal is full with same characters
+//This function checks if the game has a tie state or not for the given mark
 bool check_tie(char mark) {
+
+}
+//This function checks if the game has a tie state or not
+bool check_tie() {
 
 }
 //This function checks if given cell is empty or not 
@@ -81,11 +85,7 @@ void play_game() {
             break;
         }
         //Check if the state of the grid has a tie state
-        bool all_tie = true;
-        for (int i = 0; i < n_players; i++)
-            if (!check_tie(marks[i]))
-                all_tie = false;
-        if (all_tie) {
+        if (check_tie()) {
             //Prints the grid
             print_grid();
             //Announcement of the final statement
