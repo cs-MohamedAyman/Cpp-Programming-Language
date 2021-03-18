@@ -69,10 +69,6 @@ bool check_win() {
 bool check_valid_position(int i, int j) {
     return 0 <= i && i < N && 0 <= j && j < N;
 }
-//This function checks if the given cell is empty or not 
-bool check_empty_cell(int i, int j) {
-    return grid[i][j] == 0;
-}
 //This function checks if the given cell is original or not
 bool check_original_cell(int i, int j) {
     return cpy_grid[i][j] != 0;
