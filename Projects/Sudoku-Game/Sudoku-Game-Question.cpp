@@ -36,10 +36,6 @@ bool check_win() {
 bool check_valid_position(int i, int j) {
 
 }
-//This function checks if the given cell is empty or not 
-bool check_empty_cell(int i, int j) {
-
-}
 //This function checks if the given cell is original or not
 bool check_original_cell(int i, int j) {
 
