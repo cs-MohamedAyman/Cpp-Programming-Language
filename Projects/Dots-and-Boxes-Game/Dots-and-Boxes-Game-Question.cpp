@@ -105,7 +105,15 @@ void grid_clear() {
 }
 //This function reads a valid position input
 void read_input(int &i1, int &j1, int &i2, int &j2) {
-
+    cout << "Enter the two points of the side: ";
+    cin >> i1 >> j1 >> i2 >> j2;
+    arrange_side_points(i1, j1, i2, j2);
+    while (!check_valid_position(i1, j1) || !check_valid_position(i2, j2) ||
+           !check_valid_side(i1, j1, i2, j2) || !check_empty_side(i1, j1, i2, j2)) {
+		cout << "Enter a valid two points of the side: ";
+		cin >> i1 >> j1 >> i2 >> j2;
+		arrange_side_points(i1, j1, i2, j2);
+	}
 }
 //MAIN FUNCTION
 void play_game() {

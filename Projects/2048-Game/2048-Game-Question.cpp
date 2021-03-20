@@ -130,7 +130,12 @@ void grid_clear() {
 }
 //This function reads a valid direction
 void read_input(int &i) {
-
+    cout << "Enter the direction: ";
+	cin >> i;
+    while (!check_valid_direction(i) || !check_available_move(i)) {
+        cout << "Enter a valid direction: ";
+		cin >> i;
+	}
 }
 //MAIN FUNCTION
 void play_game() {

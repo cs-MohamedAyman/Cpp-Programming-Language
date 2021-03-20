@@ -99,7 +99,19 @@ void grid_clear() {
 }
 //This function reads a valid position input
 void read_input(int &i, int &j) {
-
+    string box_idx = (next_box == -1)? "any box" : "box " + to_string(next_box);
+	cout << "Enter the row index and column index in " << box_idx << ": ";
+	cin >> i >> j;
+    int si = i, sj = j;
+	cvt_big_grid_pos_to_small_grid_pos(si, sj);
+    while (!check_valid_position(i, j) || !check_empty_in_big_grid(i, j) ||
+          (next_box != -1 && next_box != cvt_big_grid_pos_to_box(i, j)) ||
+          (next_box == -1 && !check_empty_in_small_grid(si, sj))) {
+		cout << "Enter a valid row index and column index in " << box_idx << ": ";
+		cin >> i >> j;
+		si = i, sj = j;
+		cvt_big_grid_pos_to_small_grid_pos(si, sj);
+	}
 }
 //MAIN FUNCTION
 void play_game() {

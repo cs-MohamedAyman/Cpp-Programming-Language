@@ -58,7 +58,12 @@ void grid_clear() {
 }
 //This function reads a valid position input
 void read_input(int &i) {
-
+    cout << "Enter the column index: ";
+    cin >> i;
+    while (!check_valid_column(i) || !check_empty(i)) {
+        cout << "Enter a valid column index: ";
+        cin >> i;
+    }
 }
 //MAIN FUNCTION
 void play_game() {

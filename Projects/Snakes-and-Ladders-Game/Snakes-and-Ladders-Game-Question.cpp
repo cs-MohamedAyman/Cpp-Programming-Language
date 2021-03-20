@@ -184,7 +184,12 @@ void grid_clear() {
 }
 //This function reads a valid input
 void read_input(char &i) {
-
+    cout << "Choose the dice face [A B C D E F]: ";
+    cin >> i;
+    while (!check_valid_face(i)) {
+        cout << "Choose a valid dice face [A B C D E F]: ";
+        cin >> i;
+    }
 }
 //MAIN FUNCTION
 void play_game() {
