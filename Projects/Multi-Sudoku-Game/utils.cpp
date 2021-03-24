@@ -14,8 +14,8 @@ int n_grids[n_modes];
 string graphs[n_modes];
 const char symbols[10] = {'.', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-#define list_int new int[4]
-#define list_p_int new int*[max_shared_boxes]
+#define arr_int new int[4]
+#define arr_int_p new int*[max_shared_boxes]
 #define rep(x) for (int i = 0; i < x; i++)
 #define rep_var(i, x) for (int i = 0; i < x; i++)
 #define center_str(s, n) string((n+1)/2, ' ') + s + string(n/2, ' ')
@@ -96,7 +96,7 @@ void contract_modes() {
     graphs[idx] = "* * *"+NL+
                   "* * *"+NL+
                   "* * *"+NL;
-    similar_boxes[idx] = list_p_int{}; 
+    similar_boxes[idx] = arr_int_p{}; 
     n_grids[idx] = 1;
 	idx ++;
     //mode 01
@@ -105,7 +105,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "    * * *"+NL+
                   "    * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 8, 1, 0}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 8, 1, 0}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 02
@@ -114,7 +114,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "* * *    "+NL+
                   "* * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 2}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 03
@@ -123,7 +123,7 @@ void contract_modes() {
                   "* * * *"+NL+
                   "  * * *"+NL+
                   "  * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 7, 1, 0}, list_int{0, 8, 1, 1}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 7, 1, 0}, arr_int{0, 8, 1, 1}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 04
@@ -132,7 +132,7 @@ void contract_modes() {
                   "* * * *"+NL+
                   "* * *  "+NL+
                   "* * *  "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 1}, list_int{0, 7, 1, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 1}, arr_int{0, 7, 1, 2}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 05
@@ -140,7 +140,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "* * * * *"+NL+
                   "    * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 5, 1, 0}, list_int{0, 8, 1, 3}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 5, 1, 0}, arr_int{0, 8, 1, 3}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 06
@@ -148,7 +148,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "* * * * *"+NL+
                   "* * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 3, 1, 2}, list_int{0, 6, 1, 5}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 3, 1, 2}, arr_int{0, 6, 1, 5}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 07
@@ -156,7 +156,7 @@ void contract_modes() {
                   "* * * *"+NL+
                   "* * * *"+NL+
                   "  * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 4, 1, 0}, list_int{0, 5, 1, 1}, list_int{0, 7, 1, 3}, list_int{0, 8, 1, 4}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 4, 1, 0}, arr_int{0, 5, 1, 1}, arr_int{0, 7, 1, 3}, arr_int{0, 8, 1, 4}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 08
@@ -164,7 +164,7 @@ void contract_modes() {
                   "* * * *"+NL+
                   "* * * *"+NL+
                   "* * *  "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 3, 1, 1}, list_int{0, 4, 1, 2}, list_int{0, 6, 1, 4}, list_int{0, 7, 1, 5}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 3, 1, 1}, arr_int{0, 4, 1, 2}, arr_int{0, 6, 1, 4}, arr_int{0, 7, 1, 5}};
     n_grids[idx] = 2;
 	idx ++;
     //mode 09
@@ -175,7 +175,7 @@ void contract_modes() {
                   "    * * * * *"+NL+
                   "        * * *"+NL+
                   "        * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 8, 1, 0}, list_int{1, 8, 2, 0}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 8, 1, 0}, arr_int{1, 8, 2, 0}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 10
@@ -186,7 +186,7 @@ void contract_modes() {
                   "* * * * *    "+NL+
                   "* * *        "+NL+
                   "* * *        "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 2}, list_int{1, 6, 2, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 2}, arr_int{1, 6, 2, 2}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 11
@@ -197,7 +197,7 @@ void contract_modes() {
                   "  * * * *"+NL+
                   "    * * *"+NL+
                   "    * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 7, 1, 0}, list_int{0, 8, 1, 1}, list_int{1, 7, 2, 0}, list_int{1, 8, 2, 1}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 7, 1, 0}, arr_int{0, 8, 1, 1}, arr_int{1, 7, 2, 0}, arr_int{1, 8, 2, 1}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 12
@@ -208,7 +208,7 @@ void contract_modes() {
                   "* * * *  "+NL+
                   "* * *    "+NL+
                   "* * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 1}, list_int{0, 7, 1, 2}, list_int{1, 6, 2, 1}, list_int{1, 7, 2, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 1}, arr_int{0, 7, 1, 2}, arr_int{1, 6, 2, 1}, arr_int{1, 7, 2, 2}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 13
@@ -217,7 +217,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "    * * * * *"+NL+
                   "        * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 5, 1, 0}, list_int{0, 8, 1, 3}, list_int{1, 5, 2, 0}, list_int{1, 8, 2, 3}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 5, 1, 0}, arr_int{0, 8, 1, 3}, arr_int{1, 5, 2, 0}, arr_int{1, 8, 2, 3}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 14
@@ -226,7 +226,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "* * * * *    "+NL+
                   "* * *        "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 3, 1, 2}, list_int{0, 6, 1, 5}, list_int{1, 3, 2, 2}, list_int{1, 6, 2, 5}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 3, 1, 2}, arr_int{0, 6, 1, 5}, arr_int{1, 3, 2, 2}, arr_int{1, 6, 2, 5}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 15
@@ -235,7 +235,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "  * * * *"+NL+
                   "    * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 4, 1, 0}, list_int{0, 5, 1, 1}, list_int{0, 7, 1, 3}, list_int{0, 8, 1, 4}, list_int{1, 4, 2, 0}, list_int{1, 5, 2, 1}, list_int{1, 7, 2, 3}, list_int{1, 8, 2, 4}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 4, 1, 0}, arr_int{0, 5, 1, 1}, arr_int{0, 7, 1, 3}, arr_int{0, 8, 1, 4}, arr_int{1, 4, 2, 0}, arr_int{1, 5, 2, 1}, arr_int{1, 7, 2, 3}, arr_int{1, 8, 2, 4}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 16
@@ -244,7 +244,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "* * * *  "+NL+
                   "* * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 3, 1, 1}, list_int{0, 4, 1, 2}, list_int{0, 6, 1, 4}, list_int{0, 7, 1, 5}, list_int{1, 3, 2, 1}, list_int{1, 4, 2, 2}, list_int{1, 6, 2, 4}, list_int{1, 7, 2, 5}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 3, 1, 1}, arr_int{0, 4, 1, 2}, arr_int{0, 6, 1, 4}, arr_int{0, 7, 1, 5}, arr_int{1, 3, 2, 1}, arr_int{1, 4, 2, 2}, arr_int{1, 6, 2, 4}, arr_int{1, 7, 2, 5}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 17
@@ -255,7 +255,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "* * *    "+NL+
                   "* * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 8, 1, 0}, list_int{1, 6, 2, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 8, 1, 0}, arr_int{1, 6, 2, 2}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 18
@@ -266,7 +266,7 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "    * * *"+NL+
                   "    * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 2}, list_int{1, 8, 2, 0}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 2}, arr_int{1, 8, 2, 0}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 19
@@ -275,7 +275,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "* * *   * * *"+NL+
                   "* * *   * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 2}, list_int{0, 8, 2, 0}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 2}, arr_int{0, 8, 2, 0}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 20
@@ -284,7 +284,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "    * * *    "+NL+
                   "    * * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 8, 2, 0}, list_int{1, 6, 2, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 8, 2, 0}, arr_int{1, 6, 2, 2}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 21
@@ -295,7 +295,7 @@ void contract_modes() {
                   "* * * *"+NL+
                   "* * *  "+NL+
                   "* * *  "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 7, 1, 0}, list_int{0, 8, 1, 1}, list_int{1, 6, 2, 1}, list_int{1, 7, 2, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 7, 1, 0}, arr_int{0, 8, 1, 1}, arr_int{1, 6, 2, 1}, arr_int{1, 7, 2, 2}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 22
@@ -306,7 +306,7 @@ void contract_modes() {
                   "* * * *"+NL+
                   "  * * *"+NL+
                   "  * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 1}, list_int{0, 7, 1, 2}, list_int{1, 7, 2, 0}, list_int{1, 8, 2, 1}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 1}, arr_int{0, 7, 1, 2}, arr_int{1, 7, 2, 0}, arr_int{1, 8, 2, 1}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 23
@@ -314,7 +314,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "* * * * * * *"+NL+
                   "* * *   * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 3, 1, 2}, list_int{0, 5, 1, 5}, list_int{0, 6, 2, 0}, list_int{0, 8, 2, 3}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 3, 1, 2}, arr_int{0, 5, 1, 5}, arr_int{0, 6, 2, 0}, arr_int{0, 8, 2, 3}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 24
@@ -322,7 +322,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "* * * * * * *"+NL+
                   "    * * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 5, 2, 0}, list_int{0, 8, 2, 3}, list_int{1, 3, 2, 2}, list_int{1, 6, 2, 5}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 5, 2, 0}, arr_int{0, 8, 2, 3}, arr_int{1, 3, 2, 2}, arr_int{1, 6, 2, 5}};
     n_grids[idx] = 3;
 	idx ++;
     //mode 25
@@ -333,7 +333,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "    * * *    "+NL+
                   "    * * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 2}, list_int{0, 8, 2, 0}, list_int{1, 8, 3, 0}, list_int{2, 6, 3, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 2}, arr_int{0, 8, 2, 0}, arr_int{1, 8, 3, 0}, arr_int{2, 6, 3, 2}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 26
@@ -343,7 +343,7 @@ void contract_modes() {
                   "* * * * * *"+NL+
                   "* * * * *  "+NL+
                   "    * * *  "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 5, 1, 0}, list_int{0, 6, 2, 1}, list_int{0, 7, 2, 2}, list_int{0, 8, 1, 3}, list_int{3, 0, 2, 5}, list_int{3, 1, 1, 6}, list_int{3, 2, 1, 7}, list_int{3, 3, 2, 8}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 5, 1, 0}, arr_int{0, 6, 2, 1}, arr_int{0, 7, 2, 2}, arr_int{0, 8, 1, 3}, arr_int{3, 0, 2, 5}, arr_int{3, 1, 1, 6}, arr_int{3, 2, 1, 7}, arr_int{3, 3, 2, 8}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 27
@@ -353,7 +353,7 @@ void contract_modes() {
                   "* * * * * *"+NL+
                   "  * * * * *"+NL+
                   "  * * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 3, 1, 2}, list_int{0, 6, 1, 5}, list_int{0, 7, 2, 0}, list_int{0, 8, 2, 1}, list_int{3, 0, 1, 7}, list_int{3, 1, 1, 8}, list_int{3, 2, 2, 3}, list_int{3, 3, 2, 5}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 3, 1, 2}, arr_int{0, 6, 1, 5}, arr_int{0, 7, 2, 0}, arr_int{0, 8, 2, 1}, arr_int{3, 0, 1, 7}, arr_int{3, 1, 1, 8}, arr_int{3, 2, 2, 3}, arr_int{3, 3, 2, 5}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 28
@@ -363,7 +363,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "    * * *    "+NL+
                   "    * * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{1, 2, 0, 3}, list_int{1, 5, 0, 6}, list_int{1, 8, 3, 0}, list_int{2, 0, 0, 5}, list_int{2, 3, 0, 8}, list_int{2, 6, 3, 2}};
+    similar_boxes[idx] = arr_int_p{arr_int{1, 2, 0, 3}, arr_int{1, 5, 0, 6}, arr_int{1, 8, 3, 0}, arr_int{2, 0, 0, 5}, arr_int{2, 3, 0, 8}, arr_int{2, 6, 3, 2}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 29
@@ -373,7 +373,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "* * * * * * *"+NL+
                   "    * * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{1, 2, 0, 6}, list_int{1, 5, 3, 0}, list_int{1, 8, 3, 3}, list_int{2, 0, 0, 8}, list_int{2, 3, 3, 2}, list_int{2, 6, 3, 5}};
+    similar_boxes[idx] = arr_int_p{arr_int{1, 2, 0, 6}, arr_int{1, 5, 3, 0}, arr_int{1, 8, 3, 3}, arr_int{2, 0, 0, 8}, arr_int{2, 3, 3, 2}, arr_int{2, 6, 3, 5}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 30
@@ -384,7 +384,7 @@ void contract_modes() {
                   "* * * * * *"+NL+
                   "  * * *    "+NL+
                   "  * * *    "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 1}, list_int{0, 7, 1, 2}, list_int{0, 8, 2, 0}, list_int{3, 0, 1, 7}, list_int{3, 1, 1, 8}, list_int{3, 2, 2, 6}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 1}, arr_int{0, 7, 1, 2}, arr_int{0, 8, 2, 0}, arr_int{3, 0, 1, 7}, arr_int{3, 1, 1, 8}, arr_int{3, 2, 2, 6}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 31
@@ -395,7 +395,7 @@ void contract_modes() {
                   "* * * * * *"+NL+
                   "    * * *  "+NL+
                   "    * * *  "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 6, 1, 2}, list_int{0, 7, 2, 0}, list_int{0, 8, 2, 1}, list_int{3, 0, 1, 8}, list_int{3, 1, 2, 6}, list_int{3, 2, 2, 7}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 6, 1, 2}, arr_int{0, 7, 2, 0}, arr_int{0, 8, 2, 1}, arr_int{3, 0, 1, 8}, arr_int{3, 1, 2, 6}, arr_int{3, 2, 2, 7}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 32
@@ -404,11 +404,11 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "* * * * *"+NL+
                   "  * * *  "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 3, 1, 1}, list_int{0, 4, 1, 2}, list_int{0, 4, 2, 0}, list_int{0, 5, 2, 1}, list_int{1, 2, 2, 0}, 
-								    list_int{3, 0, 1, 4}, list_int{3, 1, 1, 5}, list_int{3, 1, 2, 3}, list_int{3, 2, 2, 4}, list_int{1, 8, 2, 6},
-								    list_int{1, 4, 0, 6}, list_int{1, 4, 3, 0}, list_int{0, 6, 3, 0},
-								    list_int{2, 4, 0, 8}, list_int{2, 4, 3, 2}, list_int{0, 8, 3, 2},
-								    list_int{0, 7, 3, 1}, list_int{1, 5, 2, 3}, list_int{0, 7, 1, 5}, list_int{0, 7, 2, 3}, list_int{1, 5, 3, 1}, list_int{2, 3, 3, 1}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 3, 1, 1}, arr_int{0, 4, 1, 2}, arr_int{0, 4, 2, 0}, arr_int{0, 5, 2, 1}, arr_int{1, 2, 2, 0}, 
+								   arr_int{3, 0, 1, 4}, arr_int{3, 1, 1, 5}, arr_int{3, 1, 2, 3}, arr_int{3, 2, 2, 4}, arr_int{1, 8, 2, 6},
+								   arr_int{1, 4, 0, 6}, arr_int{1, 4, 3, 0}, arr_int{0, 6, 3, 0},
+								   arr_int{2, 4, 0, 8}, arr_int{2, 4, 3, 2}, arr_int{0, 8, 3, 2},
+								   arr_int{0, 7, 3, 1}, arr_int{1, 5, 2, 3}, arr_int{0, 7, 1, 5}, arr_int{0, 7, 2, 3}, arr_int{1, 5, 3, 1}, arr_int{2, 3, 3, 1}};
     n_grids[idx] = 4;
 	idx ++;
     //mode 33
@@ -419,7 +419,7 @@ void contract_modes() {
                   "* * * * * * *"+NL+
                   "* * *   * * *"+NL+
                   "* * *   * * *"+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 8, 2, 0}, list_int{1, 6, 2, 2}, list_int{2, 6, 3, 2}, list_int{2, 8, 4, 0}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 8, 2, 0}, arr_int{1, 6, 2, 2}, arr_int{2, 6, 3, 2}, arr_int{2, 8, 4, 0}};
     n_grids[idx] = 5;
 	idx ++;
     //mode 34
@@ -428,19 +428,19 @@ void contract_modes() {
                   "* * * * *"+NL+
                   "* * * * *"+NL+
                   "  * * *  "+NL;
-    similar_boxes[idx] = list_p_int{list_int{0, 0, 1, 1}, list_int{0, 3, 1, 4}, list_int{0, 6, 1, 7}, list_int{0, 1, 1, 2}, list_int{0, 4, 1, 5}, list_int{0, 7, 1, 8}, 
-								    list_int{0, 0, 2, 3}, list_int{0, 1, 2, 4}, list_int{0, 2, 2, 5}, list_int{0, 3, 2, 6}, list_int{0, 4, 2, 7}, list_int{0, 5, 2, 8}, 
-								    list_int{0, 1, 3, 0}, list_int{0, 4, 3, 3}, list_int{0, 7, 3, 6}, list_int{0, 2, 3, 1}, list_int{0, 5, 3, 4}, list_int{0, 8, 3, 7}, 
-								    list_int{0, 3, 4, 0}, list_int{0, 4, 4, 1}, list_int{0, 5, 4, 2}, list_int{0, 6, 4, 3}, list_int{0, 7, 4, 4}, list_int{0, 8, 4, 5},
-								    list_int{1, 2, 3, 0}, list_int{1, 5, 3, 3}, list_int{1, 8, 3, 6}, list_int{2, 6, 4, 0}, list_int{2, 7, 4, 1}, list_int{2, 8, 4, 2},
-								    list_int{2, 3, 1, 1}, list_int{2, 4, 1, 2}, list_int{2, 4, 3, 0}, list_int{2, 5, 3, 1},
-								    list_int{4, 3, 1, 7}, list_int{4, 4, 1, 8}, list_int{4, 4, 3, 6}, list_int{4, 5, 3, 7},
-								    list_int{1, 1, 2, 3}, list_int{1, 4, 2, 6}, list_int{1, 4, 4, 0}, list_int{1, 7, 4, 3},
-								    list_int{3, 1, 2, 5}, list_int{3, 4, 2, 8}, list_int{3, 4, 4, 2}, list_int{3, 7, 4, 5},
-								    list_int{4, 0, 1, 4}, list_int{4, 1, 1, 5}, list_int{4, 1, 3, 3}, list_int{4, 2, 3, 4},
-								    list_int{2, 6, 1, 4}, list_int{2, 7, 1, 5}, list_int{2, 7, 3, 3}, list_int{2, 8, 3, 4},
-								    list_int{1, 2, 1, 4}, list_int{1, 5, 1, 7}, list_int{1, 5, 4, 1}, list_int{1, 8, 4, 4},
-								    list_int{3, 0, 1, 4}, list_int{3, 3, 1, 7}, list_int{3, 3, 4, 1}, list_int{3, 6, 4, 4}};
+    similar_boxes[idx] = arr_int_p{arr_int{0, 0, 1, 1}, arr_int{0, 3, 1, 4}, arr_int{0, 6, 1, 7}, arr_int{0, 1, 1, 2}, arr_int{0, 4, 1, 5}, arr_int{0, 7, 1, 8}, 
+								   arr_int{0, 0, 2, 3}, arr_int{0, 1, 2, 4}, arr_int{0, 2, 2, 5}, arr_int{0, 3, 2, 6}, arr_int{0, 4, 2, 7}, arr_int{0, 5, 2, 8}, 
+								   arr_int{0, 1, 3, 0}, arr_int{0, 4, 3, 3}, arr_int{0, 7, 3, 6}, arr_int{0, 2, 3, 1}, arr_int{0, 5, 3, 4}, arr_int{0, 8, 3, 7}, 
+								   arr_int{0, 3, 4, 0}, arr_int{0, 4, 4, 1}, arr_int{0, 5, 4, 2}, arr_int{0, 6, 4, 3}, arr_int{0, 7, 4, 4}, arr_int{0, 8, 4, 5},
+								   arr_int{1, 2, 3, 0}, arr_int{1, 5, 3, 3}, arr_int{1, 8, 3, 6}, arr_int{2, 6, 4, 0}, arr_int{2, 7, 4, 1}, arr_int{2, 8, 4, 2},
+								   arr_int{2, 3, 1, 1}, arr_int{2, 4, 1, 2}, arr_int{2, 4, 3, 0}, arr_int{2, 5, 3, 1},
+								   arr_int{4, 3, 1, 7}, arr_int{4, 4, 1, 8}, arr_int{4, 4, 3, 6}, arr_int{4, 5, 3, 7},
+								   arr_int{1, 1, 2, 3}, arr_int{1, 4, 2, 6}, arr_int{1, 4, 4, 0}, arr_int{1, 7, 4, 3},
+								   arr_int{3, 1, 2, 5}, arr_int{3, 4, 2, 8}, arr_int{3, 4, 4, 2}, arr_int{3, 7, 4, 5},
+								   arr_int{4, 0, 1, 4}, arr_int{4, 1, 1, 5}, arr_int{4, 1, 3, 3}, arr_int{4, 2, 3, 4},
+								   arr_int{2, 6, 1, 4}, arr_int{2, 7, 1, 5}, arr_int{2, 7, 3, 3}, arr_int{2, 8, 3, 4},
+								   arr_int{1, 2, 1, 4}, arr_int{1, 5, 1, 7}, arr_int{1, 5, 4, 1}, arr_int{1, 8, 4, 4},
+								   arr_int{3, 0, 1, 4}, arr_int{3, 3, 1, 7}, arr_int{3, 3, 4, 1}, arr_int{3, 6, 4, 4}};
     n_grids[idx] = 5;
 	idx ++;
 }
