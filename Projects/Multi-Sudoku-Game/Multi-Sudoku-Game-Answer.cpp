@@ -114,7 +114,7 @@ bool check_valid_value_in_shared_boxes(int grid_idx, int i, int j, int v) {
 	for (int i = 0; i < max_shared_boxes; i++) {
 		int grid_i = similar_boxes[mode][i][0], box_i = similar_boxes[mode][i][1], 
 			grid_j = similar_boxes[mode][i][2], box_j = similar_boxes[mode][i][3];
-		if (grid_i == 0 && box_i == 0 && grid_j == 0 && box_j == 0)
+		if (grid_i == -1 && box_i == -1 && grid_j == -1 && box_j == -1)
 			break;
         if (grid_idx == grid_i)
             res &= check_valid_value_cell(grid_i, box_i, grid_j, box_j, i, j, v);
@@ -142,7 +142,7 @@ void cpy_cell_in_shared_boxes(int grid_idx, int i, int j, int v) {
 	for (int i = 0; i < max_shared_boxes; i++) {
 		int grid_i = similar_boxes[mode][i][0], box_i = similar_boxes[mode][i][1], 
 			grid_j = similar_boxes[mode][i][2], box_j = similar_boxes[mode][i][3];
-		if (grid_i == 0 && box_i == 0 && grid_j == 0 && box_j == 0)
+		if (grid_i == -1 && box_i == -1 && grid_j == -1 && box_j == -1)
 			break;
         if (grid_idx == grid_i)
             cpy_cell(grid_i, box_i, grid_j, box_j, i, j);
@@ -156,23 +156,31 @@ void set_cell(int grid_idx, int i, int j, int v) {
     cpy_cell_in_shared_boxes(grid_idx, i, j, v);
 }
 //This function gets the similar boxes the other grids
-void get_similar_boxes(int grid_idx, int box_idx, int res[max_shared_boxes][2]) {
+void get_similar_boxes(int grid_idx, int box_idx, int shared_boxes[max_shared_boxes][2]) {
+	int idx = 0;
 	for (int i = 0; i < max_shared_boxes; i++) {
 		int grid_i = similar_boxes[mode][i][0], box_i = similar_boxes[mode][i][1], 
 			grid_j = similar_boxes[mode][i][2], box_j = similar_boxes[mode][i][3];
-		if (grid_i == 0 && box_i == 0 && grid_j == 0 && box_j == 0)
+		if (grid_i == -1 && box_i == -1 && grid_j == -1 && box_j == -1) {
+            shared_boxes[idx][0] = -1, shared_boxes[idx][1] = -1;
+			idx ++;
 			break;
-        if (grid_idx == grid_i && box_idx == box_i)
-            res[i][0] = grid_j, res[i][1] = box_j;
-        if (grid_idx == grid_j && box_idx == box_j)
-            res[i][0] = grid_i, res[i][1] = box_i;
+		}
+        if (grid_idx == grid_i && box_idx == box_i) {
+            shared_boxes[idx][0] = grid_j, shared_boxes[idx][1] = box_j;
+			idx ++;
+		}
+        if (grid_idx == grid_j && box_idx == box_j) {
+            shared_boxes[idx][0] = grid_i, shared_boxes[idx][1] = box_i;
+			idx ++;
+		}
 	}
 }
 //This function copies the given box in the shared boxes in the other grids
 void cpy_box_in_shared_boxes(int grid_idx, int box_idx, int shared_boxes[max_shared_boxes][2], bool set_original=false) {
 	for (int k = 0; k < max_shared_boxes; k++) {
 		int grid_k = shared_boxes[k][0], box_k = shared_boxes[k][1];
-		if (grid_k == 0 && box_k == 0)
+		if (grid_k == -1 && box_k == -1)
 			break;
         int a, b;
 		cvt_box_to_grid_pos(box_idx, a, b);
@@ -194,7 +202,7 @@ bool is_empty_box(int grid_idx, int box_idx) {
     return true;
 }
 //This function checks if the given box is divided into empty cells and non-empty cells or not
-bool is_mix_box(int grid_idx, int box_idx) {
+bool is_half_box(int grid_idx, int box_idx) {
     int empty_cells = 0;
     int a, b;
 	cvt_box_to_grid_pos(box_idx, a, b);
@@ -261,10 +269,10 @@ void generate_cells(int grid_idx=0) {
 //This function removes cells in the grids
 void remove_cells(int grid_idx=0) {
     for (int k = 0; k < (N+1)/2; k++) {
-		for (int i = 0; i < root_N; i++) {
-			for (int j = 0; j < root_N; j++) {
+		for (int i = 0; i < N; i+=root_N) {
+			for (int j = 0; j < N; j+=root_N) {
                 int box_idx = cvt_grid_pos_to_box(i, j);
-                if (is_mix_box(grid_idx, box_idx))
+                if (is_half_box(grid_idx, box_idx))
                     continue;
                 int t1 = rand() % root_N;
                 int t2 = rand() % root_N;
