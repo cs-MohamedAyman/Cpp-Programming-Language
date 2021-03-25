@@ -226,7 +226,7 @@ bool solve_grid(int grid_idx, int i, int j) {
     if (i == N)
         return true;
     if (check_original_cell(grid_idx, i, j))
-        return solve_grid(grid_idx, i, j + 1);
+        return solve_grid(grid_idx, i, j+1);
     for (int k = 1; k < N+1; k++) {
         if (check_valid_value_in_shared_boxes(grid_idx, i, j, k)) {
             grids[grid_idx][i][j] = k;
