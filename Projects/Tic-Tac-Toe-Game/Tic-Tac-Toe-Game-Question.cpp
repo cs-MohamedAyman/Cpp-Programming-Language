@@ -25,9 +25,17 @@ void print_grid() {
 bool check_win() {
 
 }
-//This function checks if the game has a tie state or not
-bool check_tie(char mark) {
+//This function checks if the game has a tie state or not for the given mark
+bool check_tie_player(char mark) {
 
+}
+//This function checks if the game has a tie state or not
+bool check_tie() {
+    bool all_tie = true;
+    for (int i = 0; i < n_players; i++)
+        if (!check_tie_player(marks[i]))
+            all_tie = false;
+    return all_tie;
 }
 //This function checks if given cell is empty or not 
 bool check_empty(int i, int j) {
@@ -78,7 +86,7 @@ void play_game() {
             break;
         }
         //Check if the grid has a tie state
-        if (check_tie(marks[player]) and check_tie(marks[1 - player])) {
+        if (check_tie()) {
             //Prints the grid
             print_grid();
 			//Announcement of the final statement

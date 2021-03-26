@@ -72,7 +72,7 @@ bool check_win() {
     return false;
 }
 //This function checks if the game has a tie state or not for the given mark
-bool check_tie(char mark) {
+bool check_tie_player(char mark) {
     //Check if there is an accpted row
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < M-3; j++) {
@@ -121,7 +121,7 @@ bool check_tie(char mark) {
 bool check_tie() {
     bool all_tie = true;
     for (int i = 0; i < n_players; i++)
-        if (!check_tie(marks[i]))
+        if (!check_tie_player(marks[i]))
             all_tie = false;
     return all_tie;
 }
