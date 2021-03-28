@@ -2,7 +2,8 @@
 using namespace std;
 
 const int N = 3;
-const char marks[2] = {'X', 'O'};
+const int n_players = 2;
+const char marks[n_players] = {'X', 'O'};
 char grid[N][N];
 
 //This function prints the grid of Tic-Tac-Toe Game as the game progresses
