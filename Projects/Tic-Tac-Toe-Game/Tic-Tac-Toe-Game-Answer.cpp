@@ -72,41 +72,36 @@ bool check_win() {
 }
 //This function checks if the game has a tie state or not for the given mark
 bool check_tie_player(char mark) {
-    char s;
     int cnt;
     //Check if there is a row with a single type of characters
     for (int i = 0; i < N; i++) {
-		s = mark;
 		cnt = 0;
         for (int j = 0; j < N; j++)
-			if (grid[i][j] != '.' && s != grid[i][j])
+			if (grid[i][j] != '.' && mark != grid[i][j])
 			    cnt ++;
 		if (cnt == 0)
 			return false;
     }
     //Check if there is a column with a single type of characters
     for (int i = 0; i < N; i++) {
-		s = mark;
 		cnt = 0;
         for (int j = 0; j < N; j++)
-			if (grid[j][i] != '.' && s != grid[j][i])
+			if (grid[j][i] != '.' && mark != grid[j][i])
 			    cnt ++;
 		if (cnt == 0)
 			return false;
     }
     //Check if the left diagonal is a single type of characters
-	s = mark;
 	cnt = 0;
     for (int i = 0; i < N; i++)
-		if (grid[i][i] != '.' && s != grid[i][i])
+		if (grid[i][i] != '.' && mark != grid[i][i])
 		    cnt ++;
 	if (cnt == 0)
 		return false;
     //Check if the right diagonal is a single type of characters
-	s = mark;
 	cnt = 0;
     for (int i = 0; i < N; i++)
-		if (grid[i][N-i-1] != '.' && s != grid[i][N-i-1])
+		if (grid[i][N-i-1] != '.' && mark != grid[i][N-i-1])
 		    cnt ++;
 	if (cnt == 0)
 		return false;
