@@ -33,13 +33,7 @@ void print_grid() {
 }
 //This function generates a cell with value 2 
 void generate_cell() {
-    int a = rand() % N;
-	int b = rand() % N;
-    while (grid[a][b] != 0) {
-        a = rand() % N;
-        b = rand() % N;
-	}
-    grid[a][b] = 2;
+
 }
 //This function rotates the grid by 90 degree anti-clockwise
 void rotate_90() {
