@@ -131,7 +131,6 @@ void play_game() {
         print_grid();
         //Unmark the possible cells
         unmark_possible_cells();
-        //Read an input position from the player
         cout << "Player " << marks[player] << " is playing now\n";
         //Keep the player if there is not an ability with the other player
         if (!check_player_ability()) {
@@ -140,6 +139,7 @@ void play_game() {
             player = 1 - player; 
             continue;
 		}
+        //Read an input position from the player
         int i, j;
 		read_input(i, j);
         //Set the player mark in the input position
