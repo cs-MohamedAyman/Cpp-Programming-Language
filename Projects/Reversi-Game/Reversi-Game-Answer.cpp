@@ -4,7 +4,7 @@ using namespace std;
 const int N = 8;
 const int M = 8;
 const int n_players = 2;
-char marks[n_players] = {'X', 'O'};
+char marks[n_players] = {'B', 'W'};
 int count_cells[n_players];
 char grid[N][M];
 int possible_cells[N*M][2];
