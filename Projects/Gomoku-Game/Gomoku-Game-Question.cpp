@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 15;
-const int M = 15;
+const int N = 9;
+const int M = 9;
 const int a_row = 5;
 const int n_players = 2;
-char marks[n_players] = {'X', 'O'};
+char marks[n_players] = {'B', 'W'};
 char grid[N][M];
 
 //This function prints the grid of Gomoku as the game progresses
