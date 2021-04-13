@@ -61,16 +61,6 @@ bool check_empty(int i, int j) {
 bool check_valid_position(int i, int j) {
 	return 0 <= i && i < N && 0 <= j && j < M;
 }
-//This function calculates the total number of cells for each player
-void calc_cells() {
-	for (int i = 0; i < n_players; i++)
-		count_cells[i] = 0;
-	for (int p = 0; p < n_players; p++)
-		for (int i = 0; i < N; i++)
-			for (int j = 0; j < M; j++)
-                if (grid[i][j] == marks[0][p] || grid[i][j] == marks[1][p])
-                    count_cells[p] ++;
-}
 //This function sets the given mark to the given cell
 void set_cell(int i, int j, string mark) {
 	grid[i][j] = mark;
@@ -84,8 +74,10 @@ void move_cell(int i1, int j1, int i2, int j2, bool player) {
     if (is_king[i2][j2] == 0 && player == 0 && i2 == N-1)
         is_king[i2][j2] = 1;
     set_cell(i2, j2, marks[is_king[i2][j2]][player]);
-    if (abs(i2 - i1) == 2 && abs(j2 - j1) == 2)
+    if (abs(i2 - i1) == 2 && abs(j2 - j1) == 2) {
         set_cell((i1+i2)/2, (j1+j2)/2, ".");
+        count_cells[1-player] --;
+	}
 }
 //This function generates the possible cells to be chosen in the attack case
 void generate_possible_cells_attack_case(bool player) {
@@ -255,8 +247,6 @@ void play_game() {
 		read_input(i1, j1, i2, j2);
         //Set the player mark in the input position
         move_cell(i1, j1, i2, j2, player);
-        //Calculates the total number of cells for each player
-        calc_cells();
         //Check if the grid has a win state
         if (check_win()) {
             //Prints the grid
