@@ -51,10 +51,6 @@ bool check_empty(int i, int j) {
 bool check_valid_position(int i, int j) {
 
 }
-//This function calculates the total number of cells for each player
-void calc_cells() {
-
-}
 //This function sets the given mark to the given cell
 void set_cell(int i, int j, char mark) {
 
@@ -146,8 +142,6 @@ void play_game() {
         set_cell(i, j, marks[player]);
         //Switch the neighbor cells of the given cell
         switch_cells(i, j, player);
-        //Calculates the total number of cells for each player
-        calc_cells();
         //Check if the grid has a full state
         if (check_full()) {
             //Prints the grid
