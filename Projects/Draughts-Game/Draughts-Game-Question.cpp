@@ -54,10 +54,6 @@ bool check_empty(int i, int j) {
 bool check_valid_position(int i, int j) {
 
 }
-//This function calculates the total number of cells for each player
-void calc_cells() {
-
-}
 //This function sets the given mark to the given cell
 void set_cell(int i, int j, string mark) {
 
@@ -143,8 +139,6 @@ void play_game() {
 		read_input(i1, j1, i2, j2);
         //Set the player mark in the input position
         move_cell(i1, j1, i2, j2, player);
-        //Calculates the total number of cells for each player
-        calc_cells();
         //Check if the grid has a win state
         if (check_win()) {
             //Prints the grid
