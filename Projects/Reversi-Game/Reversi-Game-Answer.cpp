@@ -26,9 +26,8 @@ void print_grid() {
         cout << "--\n";
     }
 	for (int i = 0; i< n_players; i++)
-        cout << "Player " << marks[i] << " is " << count_cells[i] << "\n";
-    cout << "--";
-    for (int i = 0; i < M; cout << "---", i++);
+        cout << "Player " << marks[i] << " has " << count_cells[i] << " cells\n";
+    for (int i = 0; i < M-1; cout << "------", i++);
     cout << "--\n";
 }
 //This function checks if the grid is full or not
@@ -57,16 +56,6 @@ bool check_empty(int i, int j) {
 //This function checks if given position is valid or not 
 bool check_valid_position(int i, int j) {
 	return 0 <= i && i < N and 0 <= j && j < M;
-}
-//This function calculates the total number of cells for each player
-void calc_cells() {
-	for (int i = 0; i < n_players; i++)
-		count_cells[i] = 0;
-	for (int p = 0; p < n_players; p++)
-		for (int i = 0; i < N; i++)
-			for (int j = 0; j < M; j++)
-                if (grid[i][j] == marks[p])
-                    count_cells[p] ++;
 }
 //This function sets the given mark to the given cell
 void set_cell(int i, int j, char mark) {
@@ -102,6 +91,7 @@ void get_most_cells(int i, int j, bool player, char target_mark, int most_cells[
 }
 //This function switches the neighbor cells of the given cell
 void switch_cells(int i, int j, bool player) {
+    count_cells[player] ++;
     int most_cells[N*M][2];
 	get_most_cells(i, j, player, marks[player], most_cells);
 	for (int k = 0; k < N*M; k++) {
@@ -111,8 +101,12 @@ void switch_cells(int i, int j, bool player) {
         int dx = (most_i > i? 1 : most_i < i? -1 : 0);
         int dy = (most_j > j? 1 : most_j < j? -1 : 0);
         int curr_i = i, curr_j = j;
+        count_cells[player] --;
+        count_cells[1-player] ++;
         while (abs(curr_i - most_i) + abs(curr_j - most_j) > 0) {
             grid[curr_i][curr_j] = marks[player];
+            count_cells[player] ++;
+            count_cells[1-player] --;
             curr_i += dx;
             curr_j += dy;
 		}
@@ -171,14 +165,14 @@ void grid_clear() {
     grid[N/2][M/2-1] = grid[N/2-1][M/2] = marks[0];
     grid[N/2-1][M/2-1] = grid[N/2][M/2] = marks[1];
 	for (int i = 0; i < n_players; i++)
-		count_cells[i] = 0;
+		count_cells[i] = 2;
 }
 //This function reads a valid position input
 void read_input(int &i, int &j) {
     cout << "Enter the row index and column index: ";
     cin >> i >> j;
     while (!check_valid_position(i, j) || !check_empty(i, j) || !check_chosen(i, j)) {
-		cout << "Enter a valid two points of the side: ";
+		cout << "Enter a valid row index and a valid column index: ";
 		cin >> i >> j;
 	}
 }
@@ -212,8 +206,6 @@ void play_game() {
         set_cell(i, j, marks[player]);
         //Switch the neighbor cells of the given cell
         switch_cells(i, j, player);
-        //Calculates the total number of cells for each player
-        calc_cells();
         //Check if the grid has a full state
         if (check_full()) {
             //Prints the grid
