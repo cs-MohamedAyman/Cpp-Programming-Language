@@ -1,26 +1,26 @@
 <img align="right" width="120" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/cpp.jpg">
 
-# Cpp-Programming-Language `60H`
+# Cpp-Programming-Language
 Cpp programming language lectures for computer science students.
 
 <img align="right" width="160" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice1.jpg">
 <br>
 
-## `Part 1` C++ Basics and Arrays `30H`
+## `Part 1` C++ Basics and Pointers `30 Hrs`
 
 ### `Lecture 01` - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-01-Overview)
 ### `Lecture 02` - [Variable Types](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-02-Variable-Types)
 ### `Lecture 03` - [Basic Operations](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-03-Basic-Operations)
 ### `Lecture 04` - [Conditions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-04-Conditions)
 ### `Lecture 05` - [Loops](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-05-Loops)
-### `Lecture 06` - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-06-Arrays)
+### `Lecture 06` - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
 
 <img align="right" width="160" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice1.jpg">
 <br>
 
-## `Part 2` C++ Pointers and Functions `30H`
+## `Part 2` C++ Arrays and Functions `30 Hrs`
 
-### `Lecture 07` - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
+### `Lecture 07` - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-06-Arrays)
 ### `Lecture 08` - [Functions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-08-Functions)
 ### `Lecture 09` - [Strings](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-09-Strings)
 ### `Lecture 10` - [Structures](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-10-Structures)
@@ -30,7 +30,7 @@ Cpp programming language lectures for computer science students.
 <img align="right" width="120" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/practice2.jpg">
 <br>
 
-## `Assignments` `50H`
+## `Assignments` `5 Hrs`/`Assignment`
 
 ### `Assignment 01` - Basic Operator Problems in [codeforces-phase-1-1](https://github.com/cs-MohamedAyman/Problem-Solving-Training/tree/master/level-1/codeforces-phase-1-1)
 ### `Assignment 02` - Condition Problems in [codeforces-phase-1-1](https://github.com/cs-MohamedAyman/Problem-Solving-Training/tree/master/level-1/codeforces-phase-1-1)
@@ -46,7 +46,7 @@ Cpp programming language lectures for computer science students.
 <img align="right" width="230" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
 <br>
 
-## `Educational-Projects` `100H`
+## `Educational-Projects` `10 Hrs`/`Project`
 
 ### `Project 01` -
 ### `Project 02` -
