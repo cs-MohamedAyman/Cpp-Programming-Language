@@ -8,7 +8,9 @@ Welcome...
 -------------
 |   | 4 | 2 |
 -------------
-Enter the direction: 2
+Enter the direction: 5
+Enter a valid direction: 3
+Enter a valid direction: 2
 -------------
 | 8 | 3 | 5 |
 -------------
