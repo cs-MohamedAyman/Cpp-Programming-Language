@@ -46,24 +46,11 @@ void generate_mines() {
 }
 //This function checks if given position is valid or not 
 bool check_valid_position(int i, int j) {
-	return 0 <= i && i < N && 0 <= j && j < M;
+
 }
 //This function calculates the total number of mines in the neighbour cells
 bool calc_neighbour_mines() {
-    int dirs[8][2] = {{1, 1}, {-1, -1}, {1, -1}, {-1, 1}, {1, 0}, {0, 1}, {-1, 0}, {0, -1}};
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < N; j++) {
-            if (grid[i][j] == -1)
-                continue;
-            int cnt = 0;
-			for (int k = 0; k < 8; k++) {
-				int di = dirs[k][0], dj = dirs[k][1];
-                if (check_valid_position(i+di, j+dj) && grid[i+di][j+dj] == -1)
-                    cnt ++;
-			}
-            grid[i][j] = cnt;
-		}
-	}
+
 }    
 //This function generates cells in the grid
 void generate_grid() {
@@ -74,71 +61,43 @@ void generate_grid() {
 }
 //This function checks if the given position is hidden or not
 bool check_hide_cell(int i, int j) {
-    return viewed_grid[i][j] == 0;
+
 }
 //This function checks if the given position is viewed or not
 bool check_mines_cell(int i, int j) {
-    return grid[i][j] == -1;
+
 }
 //This function checks if the given position is viewed or not
 bool check_view_cell(int i, int j) {
-    return viewed_grid[i][j] == 1;
+
 }
 //This function checks if the given position is flagged or not
 bool check_flag_cell(int i, int j) {
-    return viewed_grid[i][j] == 2;
+
 }
 //This function checks if the game state reachs the win state or not 
 bool check_win() {
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-            if (!(check_mines_cell(i, j) && check_flag_cell(i, j) ||
-                   not check_mines_cell(i, j) && check_view_cell(i, j)))
-                return false;
-		}
-	}
-    return true;
+
 }
 //This function checks if given operation is valid or not 
 bool check_valid_operation(char x) {
-    return tolower(x) == 's' or tolower(x) == 'f';
+
 }
 //This function flips the flag mark to the given cell
 void flip_flag(int i, int j) {
-    if (viewed_grid[i][j] == 0)
-        viewed_grid[i][j] = 2;
-    else if (viewed_grid[i][j] == 2)
-        viewed_grid[i][j] = 0;
+
 }
 //This function showes the given cell
 void show_cell(int i, int j) {
-    viewed_grid[i][j] = 1;
-    if (grid[i][j] != 0)
-        return;
-    int dirs[8][2] = {{1, 1}, {-1, -1}, {1, -1}, {-1, 1}, {1, 0}, {0, 1}, {-1, 0}, {0, -1}};
-	for (int k = 0; k < 8; k++) {
-		int di = dirs[k][0], dj = dirs[k][1];
-        if (check_valid_position(i+di, j+dj) && check_hide_cell(i+di, j+dj))
-            show_cell(i+di, j+dj);
-	}
+
 }
 //This function showes all mines cells
 void show_all_mines() {
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-            if (check_mines_cell(i, j))
-                show_cell(i, j);
-		}
-	}
+
 }
 //This function clears the game structures
 void grid_clear() {
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-			grid[i][j] = 0;
-			viewed_grid[i][j] = 0;
-		}
-	}
+
 }
 //This function reads a valid position
 void read_input(int &i, int &j, char &op) {
