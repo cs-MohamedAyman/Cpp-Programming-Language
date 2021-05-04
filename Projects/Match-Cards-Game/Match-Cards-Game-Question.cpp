@@ -30,13 +30,7 @@ void print_grid() {
 }
 //This function checks if the game state reachs the win state or not 
 bool check_win() {
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-            if (viewed_grid[i][j] == 0)
-                return false;
-		}
-	}
-    return true;
+
 }
 //This function generates cells in the given grid
 void generate_grid() {
@@ -54,36 +48,31 @@ void generate_grid() {
 }
 //This function checks if given position is valid or not 
 bool check_valid_position(int i, int j) {
-	return 0 <= i && i < N && 0 <= j && j < M;
+
 }
 //This function checks if the given cells are identical cells or not
 bool check_identical_cells(int i1, int j1, int i2, int j2) {
-    return grid[i1][j1] == grid[i2][j2];
+
 }
 //This function shows the given cell
 void show(int i, int j) {
-    viewed_grid[i][j] = 1;
+
 }
 //This function hides the given cell
 void hide(int i, int j) {
-    viewed_grid[i][j] = 0;
+
 }
 //This function checks if the given position is hidden or not
 bool check_hide_cell(int i, int j) {
-    return viewed_grid[i][j] == 0;
+
 }
 //This function checks if the given positions are the same or not
 bool check_same_position(int i1, int j1, int i2, int j2) {
-    return i1 == i2 && j1 == j2;
+
 }
 //This function clears the game structures
 void grid_clear() {
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++) {
-			grid[i][j] = 0;
-			viewed_grid[i][j] = 0;
-		}
-	}
+
 }
 //This function reads a valid direction
 void read_input(int &i1, int &j1, int &i2, int &j2) {
