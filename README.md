@@ -190,7 +190,7 @@ Cpp programming language lectures for computer science students.
 ### `Assignment 19` - String Problems in [codeforces-phase-1-4](https://github.com/cs-MohamedAyman/Problem-Solving-Training/tree/master/level-1/codeforces-phase-1-4)
 ### `Assignment 20` - List Problems in [codeforces-phase-1-4](https://github.com/cs-MohamedAyman/Problem-Solving-Training/tree/master/level-1/codeforces-phase-1-4)
 
-<img align="right" width="180" height="160" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
+<img align="right" width="230" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
 <br>
 
 ## `Educational-Projects` `10 hrs`/`Project`
@@ -198,7 +198,7 @@ Cpp programming language lectures for computer science students.
 |`Project 01` | `Project 02` | `Project 03` | `Project 04` |
 |:----:|:----:|:----:|:----:|
 | [Tic Tac Toe Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Connect Four Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Gomoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [8 Puzzle Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) |
-|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/tic-tac-toe-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/connect-four-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/gomoku-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/8-puzzle-game.jpg">|
+|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/tic-tac-toe-game.jpg" alt="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/tic-tac-toe-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/connect-four-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/gomoku-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/8-puzzle-game.jpg">|
 
 |`Project 05` | `Project 06` | `Project 07` | `Project 08` |
 |:----:|:----:|:----:|:----:|
