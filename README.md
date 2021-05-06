@@ -215,6 +215,8 @@ Cpp programming language lectures for computer science students.
 | [2048 Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Ultimate Tic Tac Toe Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Battleship Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Multi Sudoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) |
 |<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/2048-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/ultimate-tic-tac-toe-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/battleship-game.jpg">|<img width="200" height="200" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/multi-sudoku-game.jpg">|
 
+<br>
+<img align="right" width="80" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/textbooks.jpg">
 
 ## `Textbooks`
 
