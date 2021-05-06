@@ -8,7 +8,7 @@ Cpp programming language lectures for computer science students.
 
 ## `Part 1` C++ Basics and Pointers `25 hrs`
 
-### `Lecture 01` - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-01-Overview)
+### `Lecture 01` - [Overview](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -20,7 +20,7 @@ Cpp programming language lectures for computer science students.
   - Quotation and Comments
 </details>
 
-### `Lecture 02` - [Variable Types](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-02-Variable-Types)
+### `Lecture 02` - [Variable Types](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -32,7 +32,7 @@ Cpp programming language lectures for computer science students.
   - Data Type Conversion
 </details>
 
-### `Lecture 03` - [Basic Operations](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-03-Basic-Operations)
+### `Lecture 03` - [Basic Operations](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -44,7 +44,7 @@ Cpp programming language lectures for computer science students.
   - Operators Precedence
 </details>
 
-### `Lecture 04` - [Conditions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-04-Conditions)
+### `Lecture 04` - [Conditions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -57,7 +57,7 @@ Cpp programming language lectures for computer science students.
   - Switch Statement
 </details>
 
-### `Lecture 05` - [Loops](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-05-Loops)
+### `Lecture 05` - [Loops](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -69,7 +69,7 @@ Cpp programming language lectures for computer science students.
   - Loop Control Statements
 </details>
 
-### `Lecture 06` - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-07-Pointers-and-References)
+### `Lecture 06` - [Pointers and References](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -87,7 +87,7 @@ Cpp programming language lectures for computer science students.
 
 ## `Part 2` C++ Arrays and Functions `25 hrs`
 
-### `Lecture 07` - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-06-Arrays)
+### `Lecture 07` - [Arrays](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -99,7 +99,7 @@ Cpp programming language lectures for computer science students.
   - Multi-dimensional Dynamic Arrays
 </details>
 
-### `Lecture 08` - [Functions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-08-Functions)
+### `Lecture 08` - [Functions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -113,7 +113,7 @@ Cpp programming language lectures for computer science students.
   - Global and Local Variables
 </details>
 
-### `Lecture 09` - [Strings](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-09-Strings)
+### `Lecture 09` - [Strings](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -126,7 +126,7 @@ Cpp programming language lectures for computer science students.
   - Manipulating Functions
 </details>
 
-### `Lecture 10` - [Structures](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-10-Structures)
+### `Lecture 10` - [Structures](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -140,7 +140,7 @@ Cpp programming language lectures for computer science students.
   - Passing Structure by Reference and Value
 </details>
 
-### `Lecture 11` - [Enumerations and Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-11-Enumerations-and-Unions)
+### `Lecture 11` - [Enumerations and Unions](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -152,7 +152,7 @@ Cpp programming language lectures for computer science students.
   - Passing Enums and Unions by Reference and Value
 </details>
 
-### `Lecture 12` - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lecture-12-Numbers)
+### `Lecture 12` - [Numbers](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/tree/master/Lectures/README.md)
 <details>
   <summary>Agenda</summary><br>
 
@@ -196,89 +196,27 @@ Cpp programming language lectures for computer science students.
 ## `Educational-Projects` `10 hrs`/`Project`
 
 <br>
-<br>
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/tic-tac-toe-game.jpg">
 
-### `Project 01` - [Tic Tac Toe Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
+|`Project 01` | `Project 02` | `Project 03` | `Project 04` |
+|:----:|:----:|:----:|:----:|
+| [Tic Tac Toe Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Connect Four Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Gomoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [8 Puzzle Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) |
+|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/tic-tac-toe-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/connect-four-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/gomoku-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/8-puzzle-game.jpg">|
 
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/connect-four-game.jpg">
+|`Project 05` | `Project 06` | `Project 07` | `Project 08` |
+|:----:|:----:|:----:|:----:|
+| [Mills Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Dots and Boxes Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Snakes and Ladders Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Sudoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) |
+|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/mills-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/dots-and-boxes-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/snakes-and-ladders-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/sudoku-game.jpg">|
 
-### `Project 02` - [Connect Four Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
+|`Project 09` | `Project 10` | `Project 11` | `Project 12` |
+|:----:|:----:|:----:|:----:|
+| [Match Cards Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Reversi Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Draughts Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Minesweeper Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) |
+|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/match-cards-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/reversi-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/draughts-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/minesweeper-game.jpg">|
 
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/gomoku-game.jpg">
+|`Project 13` | `Project 14` | `Project 15` | `Project 16` |
+|:----:|:----:|:----:|:----:|
+| [2048 Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Ultimate Tic Tac Toe Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Battleship Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) | [Multi Sudoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) |
+|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/2048-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/ultimate-tic-tac-toe-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/battleship-game.jpg">|<img width="180" height="180" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/multi-sudoku-game.jpg">|
 
-### `Project 03` - [Gomoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/8-puzzle-game.jpg">
-
-### `Project 04` - [8 Puzzle Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/mills-game.jpg">
-
-### `Project 05` - [Mills Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/dots-and-boxes-game.jpg">
-
-### `Project 06` - [Dots and Boxes Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/snakes-and-ladders-game.jpg">
-
-### `Project 07` - [Snakes and Ladders Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/sudoku-game.jpg">
-
-### `Project 08` - [Sudoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/match-cards-game.jpg">
-
-### `Project 09` - [Match Cards Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/reversi-game.jpg">
-
-### `Project 10` - [Reversi Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/draughts-game.jpg">
-
-### `Project 11` - [Draughts Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/minesweeper-game.jpg">
-
-### `Project 12` - [Minesweeper Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/2048-game.jpg">
-
-### `Project 13` - [2048 Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/ultimate-tic-tac-toe-game.jpg">
-
-### `Project 14` - [Ultimate Tic Tac Toe Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/battleship-game.jpg">
-
-### `Project 15` - [Battleship Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="60" height="60" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/multi-sudoku-game.jpg">
-
-### `Project 16` - [Multi Sudoku Game](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md)
-
-<br>
-<img align="right" width="80" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/textbooks.jpg">
 
 ## `Textbooks`
 
