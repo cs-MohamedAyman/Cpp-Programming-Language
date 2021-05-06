@@ -196,6 +196,7 @@ Cpp programming language lectures for computer science students.
 ## `Educational-Projects` `10 hrs`/`Project`
 
 <br>
+<br>
 
 |`Project 01` | `Project 02` | `Project 03` | `Project 04` |
 |:----:|:----:|:----:|:----:|
