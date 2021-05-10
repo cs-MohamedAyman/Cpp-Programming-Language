@@ -224,6 +224,7 @@ Cpp programming language lectures for computer science students.
 * ***Introduction to Programming in C Specialization*** by Duke University
 * ***Coding for Everyone: C and C++ Specialization*** by University of California, Santa Cruz
 * ***Computational Thinking with Beginning C Programming Specialization*** by University of Colorado Boulder
+* ***Programming in C++: A Hands-on Introduction Specialization*** by Codio
 
 <img align="right" width="80" height="50" src="https://github.com/cs-MohamedAyman/YouTube-Playlists/blob/master/organizations-logos/youtube.jpg">
 
