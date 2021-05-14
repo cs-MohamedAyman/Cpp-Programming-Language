@@ -77,7 +77,7 @@ Cpp programming language lectures for computer science students.
   - Incrementing and Decrementing Pointers
   - Pointer Comparisons
   - Array of Pointers
-  - Pointer to a pointer
+  - Pointing to a pointer
   - Reference Variables
 </details>
 
