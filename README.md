@@ -239,18 +239,4 @@ Cpp programming language lectures for computer science students.
 
 <img align="right" width="80" height="50" src="https://github.com/cs-MohamedAyman/YouTube-Playlists/blob/master/organizations-logos/youtube.jpg">
 
-## `YouTube-Playlists`
-
-* thenewboston - C++ Programming Tutorials Playlist
-* ProgrammingKnowledge - QT C++ GUI Tutorial For Beginners
-* ProgrammingKnowledge - C++ Programming Tutorial for Beginners (For Absolute Beginners)
-* Naresh i Technologies - C++ Programming Language
-* CodeWithHarry - C++ Tutorials In Hindi
-* easytuts4you - C++ Programming Tutorials (HINDI/URDU)
-* by The Cherno - C++
-* Geeky Shows - C++ Programming in Hindi
-* Caleb Curry - C++ Tutorials
-* GeeksforGeeks - C++ Programming Language Tutorials
-* C++ by Saurabh Shukla Sir - C++ by Saurabh Shukla
-* LearningLad - Learn C++ Programming
-* Simple Snippets - C++ Programming Tutorials for Beginners & IT students
+## [`YouTube-Playlists`](https://github.com/cs-MohamedAyman/YouTube-Playlists/blob/master/Computer-Science-Playlists/README.md)
