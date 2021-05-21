@@ -228,15 +228,10 @@ Cpp programming language lectures for computer science students.
 * ***C++ TutorialsPoint***
 * ***A Complete Guide to Programming in C++***, Ulla Kirch-Prinz
 
-<img align="right" width="90" height="50" src="https://github.com/cs-MohamedAyman/Coursera-Specializations/blob/master/organizations-logos/coursera.jpg">
+<img align="right" width="80" height="55" src="https://github.com/cs-MohamedAyman/Coursera-Specializations/blob/master/organizations-logos/coursera.jpg">
 
-## `Coursera-Specializations`
+## [`Coursera-Specializations`](https://github.com/cs-MohamedAyman/Coursera-Specializations/blob/master/Computer-Science-Specializations/README.md)
 
-* ***Introduction to Programming in C Specialization*** by Duke University
-* ***Coding for Everyone: C and C++ Specialization*** by University of California, Santa Cruz
-* ***Computational Thinking with Beginning C Programming Specialization*** by University of Colorado Boulder
-* ***Programming in C++: A Hands-on Introduction Specialization*** by Codio
-
-<img align="right" width="80" height="50" src="https://github.com/cs-MohamedAyman/YouTube-Playlists/blob/master/organizations-logos/youtube.jpg">
+<img align="right" width="80" height="55" src="https://github.com/cs-MohamedAyman/YouTube-Playlists/blob/master/organizations-logos/youtube.jpg">
 
 ## [`YouTube-Playlists`](https://github.com/cs-MohamedAyman/YouTube-Playlists/blob/master/Computer-Science-Playlists/README.md)
