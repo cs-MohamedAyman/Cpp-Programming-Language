@@ -192,7 +192,7 @@ Cpp programming language lectures for computer science students.
 <br>
 <br>
 
-## `Educational-Projects` `10 hrs`/`Project`
+## [`Educational-Projects`](https://github.com/cs-MohamedAyman/Cpp-Programming-Language/blob/master/Projects/README.md) `10 hrs`/`Project`
 
 <img align="middle" width="900" height="225" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/educational-projects.jpg">
 
