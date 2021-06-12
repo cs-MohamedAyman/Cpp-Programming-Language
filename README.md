@@ -17,7 +17,7 @@ Cpp programming language lectures for computer science students.
   - Interpreter vs. Compiler
   - C++ Identifiers and Reserved Words
   - Lines and Indentation
-  - Multi-Line Statements
+  - Multiline Statements
   - Quotation and Comments
 </details>
 
