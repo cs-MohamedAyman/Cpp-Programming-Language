@@ -219,7 +219,7 @@ Cpp programming language lectures for computer science students.
 <br>
 <img align="right" width="80" height="120" src="https://github.com/cs-MohamedAyman/Computer-Science-Textbooks/blob/master/logos/textbooks.jpg">
 
-## `Textbooks`
+## [`Textbooks`](https://github.com/cs-MohamedAyman/Computer-Science-Textbooks)
 
 * ***C++ Primer Stanley***, B. Lippman and Josee lajoie and Barbara E. Moo
 * ***Effective Modern C++***, Scott Meyers
