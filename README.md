@@ -98,7 +98,7 @@ Cpp programming language lectures for computer science students.
   - Introduction to Array
   - Declaring and Initializing Arrays
   - Accessing Array Elements
-  - Multi-dimensional Static Arrays
+  - Multidimensional Static Arrays
   - Dynamic Arrays
   - Multi-dimensional Dynamic Arrays
 </details>
